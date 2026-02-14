@@ -1,2 +1,10 @@
-pandas
+python-dotenv
+faiss-cpu
+pillow
+pdf2image
 numpy
+streamlit
+torch
+pandas
+google-genai
+transformers
