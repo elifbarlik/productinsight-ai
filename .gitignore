@@ -1,0 +1,10 @@
+venv/
+.env
+*.pyc
+__pycache__/
+*.faiss
+embeddings/
+.DS_Store
+.idea/
+*.jpg
+*.png
