@@ -6,7 +6,7 @@ import pandas as pd
 class ProductCatalog:
     def __init__(self,csv_path:str):
         self.csv_path=Path(csv_path)
-        self.products=List[Product]=[]
+        self.products:List[Product]=[]
         self.load_from_csv()
 
     def load_from_csv(self):
@@ -25,7 +25,7 @@ class ProductCatalog:
 
     def get_products(self, product_id:int) -> Product:
         for p in self.products:
-            if p.product_id == o.product_id:
+            if p.product_id == p.product_id:
                 return p
         raise ValueError(f'Product not found: {product_id}')
     def __len__(self):
