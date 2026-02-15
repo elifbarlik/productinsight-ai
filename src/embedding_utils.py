@@ -57,7 +57,7 @@ if __name__== "__main__":
     from pathlib import Path
 
     BASE_DIR = Path(__file__).resolve().parents[2]
-    img_path = BASE_DIR / "src" / "data" / "images" / "1.jpg"
+    img_path = BASE_DIR / "src" / "data" / "images" / "image_1.jpg"
     print("IMG PATH:", img_path)
     print("EXISTS:", img_path.exists())
 
