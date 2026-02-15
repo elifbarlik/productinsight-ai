@@ -54,15 +54,8 @@ if __name__== "__main__":
     text_emb = embed_text("Black leather jacket")
     print(f"✓ Text embedding: {len(text_emb)} dimensions")
 
-    from pathlib import Path
-
-    BASE_DIR = Path(__file__).resolve().parents[2]
-    img_path = BASE_DIR / "src" / "data" / "images" / "image_1.jpg"
-    print("IMG PATH:", img_path)
-    print("EXISTS:", img_path.exists())
-
     try:
-        img_emb = embed_image(str(img_path))  # <-- str()
+        img_emb = embed_image("data/images/image_1.jpg")  # <-- str()
         print(f"✓ Image embedding: {len(img_emb)} dimensions")
     except Exception as e:
         print(f"⚠ Image test failed: {e}")
