@@ -16,9 +16,9 @@ class Product:
     def __post_init__(self):
         """Validation"""
         assert self.price >0 , "Price must be positive value"
-        assert self.image_path.exists(), "Image path does not exist: {self.image_path}"
+        assert self.image_path.exists(), f"Image path does not exist: {self.image_path}"
         if self.size_chart_path:
-            assert self.size_chart_path.exists(), "Size chart path does not exist: {self.size_chart_path}"
+            assert self.size_chart_path.exists(), f"Size chart path does not exist: {self.size_chart_path}"
     def to_dict(self):
         return{
             'id':self.product_id,

@@ -5,7 +5,7 @@ from typing import List, Tuple
 from pathlib import Path
 from src.models import Product
 
-class MultimodalVectoreStore:
+class MultimodalVectorStore:
     def __init__(self, embedding_dim:int=512):
         self.embedding_dim = embedding_dim
 
@@ -88,8 +88,8 @@ class MultimodalVectoreStore:
 
 if __name__=="__main__":
     from src.models import Product
-    store = MultimodalVectoreStore(embedding_dim=512)
-    print(f"Vectoe store created: {store.__dict__}")
+    store = MultimodalVectorStore(embedding_dim=512)
+    print(f"Vector store created: {store.__dict__}")
 
 
 
