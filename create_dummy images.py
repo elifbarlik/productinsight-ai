@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-os.makedirs("../../productinsight_ai/src/data/images", exist_ok=True)
+os.makedirs("src/data/images", exist_ok=True)
 
 colors = [
     ('1', (0,0,0), 'Black'),
