@@ -17,5 +17,5 @@ for img_id, color, name in colors:
 
     text_color = (255,255,255) if sum(color)<300 else (0,0,0)
     draw.text((50,180), f"{name}\nProduct {img_id}", fill=text_color)
-    img.save(f"data/images/image_{img_id}.jpg")
-    print(f"image_{img_id}.jpg created")
+    img.save(f"src/data/images/{img_id}.jpg")
+    print(f"{img_id}.jpg created")
