@@ -78,8 +78,8 @@ class MultimodalVectorStore:
                 description=metadata['description'],
                 price=metadata['price'],
                 color=metadata['color'],
-                image_path=metadata['image_path'],
-                size_chart_path=Path(metadata['size_chart_path']) if metadata.get('size_chart_path') else None
+                image_path=Path(metadata["image_path"]) if metadata.get("image_path") else None,
+                size_chart_path=Path(metadata["size_chart_path"]) if metadata.get("size_chart_path") else None,
             )
             store.metadata.append(product)
             store.id_map[product.product_id] = i
