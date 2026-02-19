@@ -1,6 +1,11 @@
 product_id,name,description,image_path,size_chart_path,price,color
-1,Classic Black Leather Jacket,Premium Italian leather with soft lining,data/images/1.jpg,data/size_charts/1.csv,150.00,Black
-2,White Cotton Sneakers,Breathable mesh with rubber sole,data/images/2.jpg,data/size_charts/1.csv,79.99,White
-3,Blue Denim Jeans,Comfortable fit with stretch,data/images/3.jpg,data/size_charts/1.csv,59.99,Blue
-4,Red Casual T-Shirt,100% cotton soft fabric,data/images/4.jpg,data/size_charts/1.csv,29.99,Red
-5,Green Summer Jacket,Lightweight and breathable,data/images/5.jpg,data/size_charts/1.csv,89.99,Green
+1,Classic Black Leather Jacket,Premium Italian leather with soft lining,src/data/images/1.jpg,src/data/size_charts/1.csv,150.00,Black
+2,White Cotton Sneakers,Breathable mesh with rubber sole,src/data/images/2.jpg,src/data/size_charts/1.csv,79.99,White
+3,Blue Denim Jeans,Comfortable fit with stretch,src/data/images/3.jpg,src/data/size_charts/1.csv,59.99,Blue
+4,Red Casual T-Shirt,100% cotton soft fabric,src/data/images/4.jpg,src/data/size_charts/1.csv,29.99,Red
+5,Green Summer Jacket,Lightweight and breathable,src/data/images/5.jpg,src/data/size_charts/1.csv,89.99,Green
+6,Navy Blue Chinos,Classic style comfortable pants,src/data/images/1.jpg,src/data/size_charts/1.csv,69.99,Navy
+7,Brown Leather Shoes,Durable leather formal shoes,src/data/images/2.jpg,src/data/size_charts/1.csv,99.99,Brown
+8,Gray Wool Sweater,Soft wool winter sweater,src/data/images/3.jpg,src/data/size_charts/1.csv,79.99,Gray
+9,Pink Casual Dress,Light pink casual summer dress,src/data/images/4.jpg,src/data/size_charts/1.csv,59.99,Pink
+10,Black Formal Pants,Professional black formal pants,src/data/images/5.jpg,src/data/size_charts/1.csv,89.99,Black

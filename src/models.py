@@ -21,11 +21,11 @@ class Product:
             assert self.size_chart_path.exists(), f"Size chart path does not exist: {self.size_chart_path}"
     def to_dict(self):
         return{
-            'id':self.product_id,
+            'product_id':self.product_id,
             'name':self.name,
             'description':self.description,
             'price':self.price,
             'color':self.color,
-            'image_path':self.image_path,
+            'image_path':str(self.image_path),
             'size_chart_path':str(self.size_chart_path) if self.size_chart_path else None
         }

@@ -4,14 +4,17 @@ import json
 from typing import List, Tuple
 from pathlib import Path
 from src.models import Product
+import os
 
 class MultimodalVectorStore:
-    def __init__(self, embedding_dim:int=512):
-        self.embedding_dim = embedding_dim
+    def __init__(self, text_dim:int=3072, image_dim:int=512, table_dim:int=3072):
+        self.text_dim = text_dim
+        self.image_dim = image_dim
+        self.table_dim = table_dim
 
-        self.text_index = faiss.IndexFlatL2(embedding_dim)
-        self.image_index = faiss.IndexFlatL2(embedding_dim)
-        self.table_index = faiss.IndexFlatL2(embedding_dim)
+        self.text_index = faiss.IndexFlatL2(text_dim)
+        self.image_index = faiss.IndexFlatL2(image_dim)
+        self.table_index = faiss.IndexFlatL2(table_dim)
 
         self.metadata:List[Product] = []
         self.id_map={}
@@ -49,6 +52,7 @@ class MultimodalVectorStore:
         return [self.metadata[idx] for idx , score in sorted_indices]
 
     def save(self, text_path:str, image_path:str,table_path:str, metadata_path:str ):
+        os.makedirs(os.path.dirname(text_path), exist_ok=True)
         faiss.write_index(self.text_index, text_path)
         faiss.write_index(self.image_index, image_path)
         faiss.write_index(self.table_index, table_path)
@@ -88,31 +92,5 @@ class MultimodalVectorStore:
 
 if __name__=="__main__":
     from src.models import Product
-    store = MultimodalVectorStore(embedding_dim=512)
+    store = MultimodalVectorStore()
     print(f"Vector store created: {store.__dict__}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
