@@ -19,8 +19,10 @@ class ProductCatalog:
                 description=row['description'],
                 price=float(row['price']),
                 color=row['color'],
+                category=row['category'],
+                gender=row['gender'],
                 image_path=Path(row['image_path']),
-                size_chart_path=Path(row['size_chart_path']) if pd.notna(row['size_chart_path']) else None
+                size_chart_path=Path(row['size_chart_path']) if pd.notna(row['size_chart_path']) and row['size_chart_path'] != "" else None
             )
             self.products.append(product)
             self._id_map[product.product_id] = product

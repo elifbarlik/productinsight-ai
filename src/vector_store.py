@@ -111,6 +111,8 @@ class MultimodalVectorStore:
                 description=metadata['description'],
                 price=metadata['price'],
                 color=metadata['color'],
+                category=metadata.get('category', ''),
+                gender=metadata.get('gender', ''),
                 image_path=Path(metadata["image_path"]) if metadata.get("image_path") else None,
                 size_chart_path=Path(metadata["size_chart_path"]) if metadata.get("size_chart_path") else None,
             )

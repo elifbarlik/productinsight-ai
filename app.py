@@ -141,12 +141,16 @@ if user_query and search_clicked:
                 st.markdown(f"""
                 <div class="product-card">
                     <h4>{product.name}</h4>
-                    <span class="price">${product.price}</span><br>
+                    <span class="price">₹{product.price}</span><br>
                     <span class="relevance-badge" style="background:{score_color}22; color:{score_color};">
-                        Uyum: %{score}
+                        Match: {score}%
                     </span><br>
+                    <div style="margin: 5px 0;">
+                        <span class="meta" style="background: #333; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">{product.gender}</span>
+                        <span class="meta" style="background: #333; padding: 2px 6px; border-radius: 4px;">{product.category}</span>
+                    </div>
                     <span class="meta">Color: {product.color}</span>
-                    <p class="meta">{product.description}</p>
+                    <p class="meta" style="margin-top: 5px;">{product.description[:100]}...</p>
                 </div>
                 """, unsafe_allow_html=True)
 

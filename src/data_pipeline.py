@@ -11,7 +11,7 @@ class DataPipeline:
         self.vector_store = MultimodalVectorStore()
 
     def prepare_product(self, product):
-        text = f"{product.name} {product.description} {product.color}"
+        text = f"{product.name} {product.description} {product.color} {product.category} {product.gender}"
         text_emb = embed_text(text)
         image_emb = embed_image(str(product.image_path))
 

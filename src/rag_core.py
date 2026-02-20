@@ -46,6 +46,8 @@ class ProductRAG:
                 f"### {i}. {product.name}\n"
                 f"- **Price:** ${product.price}\n"
                 f"- **Color:** {product.color}\n"
+                f"- **Category:** {product.category}\n"
+                f"- **Gender:** {product.gender}\n"
                 f"- **Description:** {product.description}\n"
                 f"- **Image:** {product.image_path}\n\n"
             )
@@ -55,16 +57,16 @@ class ProductRAG:
         context = self.format_context(products)
 
         system_prompt = (
-            "You are a helpful e-commerce customer support assistant.\n"
+            "You are a helpful e-commerce customer support assistant for an Indian Ethnic Wear store.\n"
             "You have access to a product catalog and should help customers find products.\n\n"
             "Instructions:\n"
             "1. ONLY recommend products that are listed in the provided context below.\n"
             "2. NEVER invent or fabricate products that are not in the context.\n"
-            "3. Strictly apply color filters: if the customer asks for 'blue jacket', "
-            "only recommend jackets that are blue or blue-toned (navy, indigo, etc.).\n"
-            "4. Strictly apply category filters: if the customer asks for 'jacket', "
-            "only recommend jackets, coats, or blazers — not shirts, jeans, or shoes.\n"
-            "5. If the customer specifies a price range (e.g. 'under $100'), "
+            "3. Strictly apply color filters: if the customer asks for 'blue kurta', "
+            "only recommend kurtas that are blue or blue-toned (navy, teal, etc.).\n"
+            "4. Strictly apply category and gender filters: if the customer asks for 'women kurta', "
+            "only recommend products where Category is 'Kurta' (or 'Kurta Set') and Gender is 'Women'.\n"
+            "5. If the customer specifies a price range (e.g. 'under $3000'), "
             "only recommend products within that range.\n"
             "6. Provide specific product names, prices, and brief descriptions.\n"
             "7. Be friendly and helpful.\n"
