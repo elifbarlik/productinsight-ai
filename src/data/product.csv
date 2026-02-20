@@ -1,11 +1,26 @@
 product_id,name,description,image_path,size_chart_path,price,color
-1,Classic Black Leather Jacket,Premium Italian leather with soft lining,src/data/images/1.jpg,src/data/size_charts/1.csv,150.00,Black
-2,White Cotton Sneakers,Breathable mesh with rubber sole,src/data/images/2.jpg,src/data/size_charts/1.csv,79.99,White
-3,Blue Denim Jeans,Comfortable fit with stretch,src/data/images/3.jpg,src/data/size_charts/1.csv,59.99,Blue
-4,Red Casual T-Shirt,100% cotton soft fabric,src/data/images/4.jpg,src/data/size_charts/1.csv,29.99,Red
-5,Green Summer Jacket,Lightweight and breathable,src/data/images/5.jpg,src/data/size_charts/1.csv,89.99,Green
-6,Navy Blue Chinos,Classic style comfortable pants,src/data/images/1.jpg,src/data/size_charts/1.csv,69.99,Navy
-7,Brown Leather Shoes,Durable leather formal shoes,src/data/images/2.jpg,src/data/size_charts/1.csv,99.99,Brown
-8,Gray Wool Sweater,Soft wool winter sweater,src/data/images/3.jpg,src/data/size_charts/1.csv,79.99,Gray
-9,Pink Casual Dress,Light pink casual summer dress,src/data/images/4.jpg,src/data/size_charts/1.csv,59.99,Pink
-10,Black Formal Pants,Professional black formal pants,src/data/images/5.jpg,src/data/size_charts/1.csv,89.99,Black
+1,Classic Black Leather Jacket,Premium Italian leather with soft lining and zippered pockets,src/data/images/1.jpg,src/data/size_charts/1.csv,150.00,Black
+2,White Cotton Sneakers,Breathable mesh upper with rubber sole for daily comfort,src/data/images/2.jpg,src/data/size_charts/3.csv,79.99,White
+3,Blue Denim Jeans,Slim-fit stretch denim jeans with five-pocket styling,src/data/images/3.jpg,src/data/size_charts/2.csv,59.99,Blue
+4,Red Casual T-Shirt,100% organic cotton soft fabric crew neck tee,src/data/images/4.jpg,src/data/size_charts/1.csv,29.99,Red
+5,Green Summer Jacket,Lightweight water-resistant jacket perfect for spring and summer,src/data/images/5.jpg,src/data/size_charts/1.csv,89.99,Green
+6,Navy Blue Chinos,Classic tapered-fit chino pants with stretch waistband,src/data/images/6.jpg,src/data/size_charts/2.csv,69.99,Navy
+7,Brown Leather Shoes,Hand-stitched genuine leather oxford shoes for formal occasions,src/data/images/7.jpg,src/data/size_charts/3.csv,99.99,Brown
+8,Gray Wool Sweater,Soft merino wool crew-neck sweater for cold weather,src/data/images/8.jpg,src/data/size_charts/1.csv,79.99,Gray
+9,Pink Casual Dress,Light pink A-line casual summer dress with pockets,src/data/images/9.jpg,src/data/size_charts/4.csv,59.99,Pink
+10,Black Formal Pants,Professional slim-fit black formal trousers with crease,src/data/images/10.jpg,src/data/size_charts/2.csv,89.99,Black
+11,Beige Trench Coat,Water-resistant classic trench coat with belt for autumn,src/data/images/11.jpg,src/data/size_charts/1.csv,129.99,Beige
+12,Black Running Shoes,Lightweight mesh running shoes with cushioned sole and arch support,src/data/images/12.jpg,src/data/size_charts/3.csv,109.99,Black
+13,Striped Polo Shirt,Classic cotton pique polo with contrasting stripe pattern,src/data/images/13.jpg,src/data/size_charts/1.csv,44.99,Blue
+14,Tan Leather Crossbody Bag,Compact genuine leather crossbody bag with adjustable strap,src/data/images/14.jpg,,69.99,Tan
+15,Charcoal Wool Fedora Hat,Classic wool felt fedora hat suitable for all seasons,src/data/images/15.jpg,,49.99,Charcoal
+16,White Linen Shirt,Relaxed-fit breathable linen shirt ideal for summer,src/data/images/6.jpg,src/data/size_charts/1.csv,54.99,White
+17,Olive Cargo Pants,Durable cotton cargo pants with multiple utility pockets,src/data/images/7.jpg,src/data/size_charts/2.csv,74.99,Olive
+18,Burgundy Hoodie,Heavyweight fleece pullover hoodie with kangaroo pocket,src/data/images/8.jpg,src/data/size_charts/1.csv,64.99,Burgundy
+19,Silver Watch,Stainless steel analog watch with sapphire crystal face,src/data/images/9.jpg,,199.99,Silver
+20,Black Backpack,Water-resistant nylon backpack with laptop compartment and USB port,src/data/images/10.jpg,,59.99,Black
+21,Cream Cashmere Scarf,Luxuriously soft pure cashmere scarf for winter warmth,src/data/images/11.jpg,,89.99,Cream
+22,Dark Wash Denim Jacket,Vintage-inspired denim trucker jacket with button closure,src/data/images/12.jpg,src/data/size_charts/1.csv,94.99,Indigo
+23,Floral Maxi Skirt,Flowing chiffon maxi skirt with floral print and elastic waist,src/data/images/13.jpg,src/data/size_charts/4.csv,49.99,Multicolor
+24,Navy Blazer,Tailored slim-fit blazer in premium wool blend for business or casual,src/data/images/14.jpg,src/data/size_charts/1.csv,159.99,Navy
+25,Camel Suede Boots,Ankle-height suede boots with side zipper and block heel,src/data/images/15.jpg,src/data/size_charts/3.csv,119.99,Camel
