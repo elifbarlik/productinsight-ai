@@ -1,4 +1,5 @@
 import traceback
+import numpy as np
 from src.catalog import ProductCatalog
 from src.embedding_utils import embed_text, embed_image, embed_table
 from src.vector_store import MultimodalVectorStore
@@ -14,7 +15,11 @@ class DataPipeline:
         text = f"{product.name} {product.description} {product.color}"
         text_emb = embed_text(text)
         image_emb = embed_image(str(product.image_path))
-        table_emb = embed_table(str(product.size_chart_path))
+
+        if product.size_chart_path and str(product.size_chart_path) != "None":
+            table_emb = embed_table(str(product.size_chart_path))
+        else:
+            table_emb = np.zeros(self.vector_store.table_dim, dtype='float32')
 
         return text, text_emb, image_emb, table_emb
 
