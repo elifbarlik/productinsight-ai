@@ -20,12 +20,22 @@ def embed_text(text:str)->np.ndarray:
     return np.array(embedding, dtype='float32')
 
 def embed_texts_batch(texts:list)->np.ndarray:
-    response = client.models.embed_content(
-        model=embedding_model_name,
-        contents=texts
-    )
-    embedding = [item.embedding for item in response.embeddings]
-    return np.array(embedding, dtype='float32')
+    # FIX: Boş liste kontrolü — erken return
+    if not texts:
+        return np.array([], dtype='float32')
+
+    try:
+        response = client.models.embed_content(
+            model=embedding_model_name,
+            contents=texts
+        )
+        # FIX: .embedding → .values (embed_text() ile tutarlı)
+        embedding = [item.values for item in response.embeddings]
+        return np.array(embedding, dtype='float32')
+    except Exception as e:
+        # FIX: API hatası logla ve ValueError fırlat
+        print(f"[embed_texts_batch] API error: {e}")
+        raise ValueError(f"Batch embedding failed: {e}") from e
 
 def embed_image(image_path: str) -> np.ndarray:
     image = Image.open(image_path).convert("RGB")
