@@ -66,7 +66,7 @@ class ProductRAG:
             "only recommend kurtas that are blue or blue-toned (navy, teal, etc.).\n"
             "4. Strictly apply category and gender filters: if the customer asks for 'women kurta', "
             "only recommend products where Category is 'Kurta' (or 'Kurta Set') and Gender is 'Women'.\n"
-            "5. If the customer specifies a price range (e.g. 'under $3000'), "
+            "5. If the customer specifies a price range (e.g. 'under ₹3000'), "
             "only recommend products within that range.\n"
             "6. Provide specific product names, prices, and brief descriptions.\n"
             "7. Be friendly and helpful.\n"
