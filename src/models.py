@@ -11,6 +11,8 @@ class Product:
     description:str
     price:float
     color:str
+    category:str
+    gender:str
     image_path: Path
     size_chart_path: Optional[Path]=None
     def __post_init__(self):
@@ -27,6 +29,8 @@ class Product:
             'description':self.description,
             'price':self.price,
             'color':self.color,
+            'category':self.category,
+            'gender':self.gender,
             'image_path':str(self.image_path),
             'size_chart_path':str(self.size_chart_path) if self.size_chart_path else None
         }
