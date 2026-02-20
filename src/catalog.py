@@ -25,7 +25,7 @@ class ProductCatalog:
 
     def get_products(self, product_id:int) -> Product:
         for p in self.products:
-            if p.product_id == p.product_id:
+            if p.product_id == product_id:  # FIX: Bug - self-comparison düzeltildi
                 return p
         raise ValueError(f'Product not found: {product_id}')
     def __len__(self):
