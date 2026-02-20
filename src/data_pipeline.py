@@ -3,7 +3,6 @@ import numpy as np
 from src.catalog import ProductCatalog
 from src.embedding_utils import embed_text, embed_image, embed_table
 from src.vector_store import MultimodalVectorStore
-from src.config import vector_dim
 
 class DataPipeline:
     """Katalog → Embedding → Vector Store"""
