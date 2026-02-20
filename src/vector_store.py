@@ -1,7 +1,7 @@
 import faiss
 import numpy as np
 import json
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from pathlib import Path
 from src.models import Product
 import os
@@ -29,27 +29,65 @@ class MultimodalVectorStore:
         self.metadata.append(product)
         self.id_map[product.product_id] = idx
 
-    def search_text(self, query_embedding:np.ndarray, k:int=5) -> List[Tuple[int, float]]:
-        distances, indices = self.text_index.search(query_embedding.reshape(1,-1).astype('float32'), k)
+    # FIX: threshold parametresi eklendi — L2 distance bazlı filtreleme
+    def search_text(self, query_embedding: np.ndarray, k: int = 5, threshold: float = None) -> List[Tuple[int, float]]:
+        distances, indices = self.text_index.search(query_embedding.reshape(1, -1).astype('float32'), k)
 
-        return list(zip(indices[0], distances[0]))
+        results = list(zip(indices[0].tolist(), distances[0].tolist()))
 
-    def search_image(self, query_embedding:np.ndarray, k:int=5) -> List[Tuple[int, float]]:
-        distances, indices = self.image_index.search(query_embedding.reshape(1,-1).astype('float32'), k)
-        return list(zip(indices[0], distances[0]))
+        # FIX: threshold verilmişse, L2 distance < threshold olanları kabul et (küçük = benzer)
+        if threshold is not None:
+            results = [(idx, dist) for idx, dist in results if dist < threshold]
 
-    def search_combined(self, text_emb:np.ndarray,image_emb:np.ndarray, k:int=5) -> List[Product]:
-        text_results=self.search_text(text_emb,k)
-        image_results=self.search_image(image_emb,k)
+        return results
 
-        scores={}
+    # FIX: threshold parametresi eklendi — image search'e de aynı destek
+    def search_image(self, query_embedding: np.ndarray, k: int = 5, threshold: float = None) -> List[Tuple[int, float]]:
+        distances, indices = self.image_index.search(query_embedding.reshape(1, -1).astype('float32'), k)
+
+        results = list(zip(indices[0].tolist(), distances[0].tolist()))
+
+        # FIX: threshold filtresi
+        if threshold is not None:
+            results = [(idx, dist) for idx, dist in results if dist < threshold]
+
+        return results
+
+    # FIX: search_combined() yeniden yazıldı — optional image, weight desteği, threshold filtresi
+    def search_combined(
+        self,
+        text_embedding: np.ndarray,
+        image_embedding: Optional[np.ndarray] = None,
+        k: int = 5,
+        threshold: float = None,
+        text_weight: float = 0.7,
+        image_weight: float = 0.3
+    ) -> List[Product]:
+        # FIX: text araması her zaman yapılır
+        text_results = self.search_text(text_embedding, k=k * 2)
+
+        scores = {}
         for idx, dist in text_results:
-            scores[idx]=scores.get(idx,0)+(1-min(dist,1)) *0.6
-        for idx, dist in image_results:
-            scores[idx]=scores.get(idx,0)+(1-min(dist,1)) *0.4
+            # FIX: L2 mesafesini benzerlik skoruna çevir (küçük mesafe = yüksek skor)
+            similarity = 1.0 / (1.0 + dist)
+            scores[idx] = scores.get(idx, 0) + similarity * text_weight
 
-        sorted_indices=sorted(scores.items(), key=lambda x:x[1], reverse=True)[:k]
-        return [self.metadata[idx] for idx , score in sorted_indices]
+        # FIX: image_embedding opsiyonel — varsa image index'te de ara
+        if image_embedding is not None:
+            image_results = self.search_image(image_embedding, k=k * 2)
+            for idx, dist in image_results:
+                similarity = 1.0 / (1.0 + dist)
+                scores[idx] = scores.get(idx, 0) + similarity * image_weight
+
+        # FIX: threshold filtresi uygula (combined skor bazlı)
+        if threshold is not None:
+            scores = {idx: score for idx, score in scores.items() if score >= threshold}
+
+        # FIX: skora göre sırala ve k sonuç döndür
+        sorted_indices = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:k]
+
+        # FIX: boş liste dön, exception fırlatma
+        return [self.metadata[idx] for idx, score in sorted_indices if idx < len(self.metadata)]
 
     def save(self, text_path:str, image_path:str,table_path:str, metadata_path:str ):
         os.makedirs(os.path.dirname(text_path), exist_ok=True)
