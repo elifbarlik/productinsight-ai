@@ -124,7 +124,7 @@ if user_query and search_clicked:
 
         cols = st.columns(min(3, len(products)))
         for i, product in enumerate(products):
-            with cols[i % 3]:
+            with cols[i % len(cols)]:
                 dist = distances[i] if i < len(distances) else 1.0
                 score = distance_to_score(dist)
 

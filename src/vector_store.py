@@ -4,17 +4,18 @@ import json
 from typing import List, Tuple, Optional
 from pathlib import Path
 from src.models import Product
+from src.config import text_embedding_dim, image_embedding_dim, table_embedding_dim
 import os
 
 class MultimodalVectorStore:
-    def __init__(self, text_dim:int=3072, image_dim:int=512, table_dim:int=3072):
-        self.text_dim = text_dim
-        self.image_dim = image_dim
-        self.table_dim = table_dim
+    def __init__(self, text_dim:int=None, image_dim:int=None, table_dim:int=None):
+        self.text_dim = text_dim if text_dim is not None else text_embedding_dim
+        self.image_dim = image_dim if image_dim is not None else image_embedding_dim
+        self.table_dim = table_dim if table_dim is not None else table_embedding_dim
 
-        self.text_index = faiss.IndexFlatL2(text_dim)
-        self.image_index = faiss.IndexFlatL2(image_dim)
-        self.table_index = faiss.IndexFlatL2(table_dim)
+        self.text_index = faiss.IndexFlatL2(self.text_dim)
+        self.image_index = faiss.IndexFlatL2(self.image_dim)
+        self.table_index = faiss.IndexFlatL2(self.table_dim)
 
         self.metadata:List[Product] = []
         self.id_map={}
