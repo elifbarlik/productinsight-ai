@@ -1,10 +1,48 @@
-venv/
-.env
-*.pyc
+# Python
 __pycache__/
-*.faiss
-embeddings/
-.DS_Store
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv
+venv/
+ENV/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode/
 .idea/
-*.jpg
-*.png
+*.swp
+*.swo
+
+# Project Specific - FAISS Indexes and Metadata
+# We usually don't want to commit these because they are large and auto-generated
+embeddings/*.faiss
+embeddings/metadata.json
+
+# Dataset (Optional: Uncomment if images are large or private)
+# src/data/images/
+
+# OS specific
+.DS_Store
+Thumbs.db
