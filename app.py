@@ -7,6 +7,8 @@ import streamlit as st
 from src.config import currency_symbol
 from src.factory import build_rag
 
+MAX_UPLOAD_BYTES = 5 * 1024 * 1024
+
 st.set_page_config(page_title="ProductInsight AI", page_icon="🛍️", layout="wide")
 
 
@@ -88,15 +90,25 @@ with st.sidebar.expander("Find similar to a photo", expanded=False):
         st.caption("Needs `pip install -r requirements-clip.txt` and an index built with CLIP.")
     else:
         upload = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
-        if upload is not None and st.button("Search by image"):
-            with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(upload.name)[1]) as tmp:
+        if upload is not None and upload.size > MAX_UPLOAD_BYTES:
+            st.error("Image too large (max 5 MB).")
+        elif upload is not None and st.button("Search by image"):
+            # suffix is taken from a fixed whitelist, never from the user-supplied file name
+            suffix = ".png" if upload.type == "image/png" else ".jpg"
+            with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
                 tmp.write(upload.getbuffer())
-            hits = retriever.search_by_image(tmp.name, k=k)
-            os.unlink(tmp.name)
-            st.session_state.messages.append(
-                {"role": "assistant", "content": "Items visually similar to your photo:", "hits": hits}
-            )
-            st.rerun()
+            try:
+                hits = retriever.search_by_image(tmp.name, k=k)
+            except Exception:  # noqa: BLE001 - corrupt / unsupported image
+                st.error("Could not read that image.")
+                hits = None
+            finally:
+                os.unlink(tmp.name)
+            if hits is not None:
+                st.session_state.messages.append(
+                    {"role": "assistant", "content": "Items visually similar to your photo:", "hits": hits}
+                )
+                st.rerun()
 
 # ── conversation ──────────────────────────────────────────
 for n, msg in enumerate(st.session_state.messages):
