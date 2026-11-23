@@ -1,0 +1,5025 @@
+[
+  {
+    "config": "bm25",
+    "per_query": [
+      {
+        "query": "black kurta for women",
+        "type": "attribute",
+        "ranked": [
+          37,
+          5,
+          19,
+          1,
+          49,
+          4,
+          8,
+          7,
+          31,
+          18
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 1.04
+      },
+      {
+        "query": "navy blue kurta set",
+        "type": "attribute",
+        "ranked": [
+          47,
+          20,
+          3,
+          14,
+          7,
+          24,
+          21,
+          22,
+          33,
+          11
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9047172294870751,
+        "latency_ms": 0.44
+      },
+      {
+        "query": "teal kurta",
+        "type": "attribute",
+        "ranked": [
+          44,
+          26,
+          13,
+          33,
+          38,
+          4,
+          8,
+          7,
+          31,
+          18
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "pink kurta under 2500",
+        "type": "attribute",
+        "ranked": [
+          40,
+          42,
+          32,
+          25,
+          46,
+          29,
+          11,
+          51,
+          10,
+          33
+        ],
+        "n_relevant": 3,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6005491084563833,
+        "latency_ms": 0.2
+      },
+      {
+        "query": "red kurta below 2000",
+        "type": "attribute",
+        "ranked": [
+          4,
+          39,
+          27,
+          6,
+          45,
+          43,
+          8,
+          7,
+          31,
+          18
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6309297535714575,
+        "latency_ms": 0.19
+      },
+      {
+        "query": "green kurta",
+        "type": "attribute",
+        "ranked": [
+          24,
+          35,
+          18,
+          50,
+          41,
+          10,
+          30,
+          5,
+          23,
+          4
+        ],
+        "n_relevant": 4,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.7486761295186739,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "sharara set",
+        "type": "attribute",
+        "ranked": [
+          46,
+          30,
+          36
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.12
+      },
+      {
+        "query": "skirt set for women",
+        "type": "attribute",
+        "ranked": [
+          32,
+          23
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.14
+      },
+      {
+        "query": "maroon kurta set under 4500",
+        "type": "attribute",
+        "ranked": [
+          36,
+          28,
+          34,
+          16,
+          4,
+          8,
+          7,
+          31,
+          18,
+          9
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6309297535714575,
+        "latency_ms": 0.2
+      },
+      {
+        "query": "cheap kurta under 1500",
+        "type": "attribute",
+        "ranked": [
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48,
+          50
+        ],
+        "n_relevant": 5,
+        "p5": 0.2,
+        "r10": 0.2,
+        "mrr": 0.2,
+        "ndcg10": 0.13120507751234178,
+        "latency_ms": 0.19
+      },
+      {
+        "query": "yellow kurta",
+        "type": "attribute",
+        "ranked": [
+          9,
+          37,
+          17,
+          35,
+          12,
+          43,
+          4,
+          8,
+          7,
+          31
+        ],
+        "n_relevant": 4,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.8756458727267334,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "kurta between 3000 and 4000",
+        "type": "attribute",
+        "ranked": [
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48,
+          50
+        ],
+        "n_relevant": 11,
+        "p5": 0.4,
+        "r10": 0.18181818181818182,
+        "mrr": 1.0,
+        "ndcg10": 0.33013764944712026,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "kurta over 5000",
+        "type": "attribute",
+        "ranked": [
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48,
+          50
+        ],
+        "n_relevant": 8,
+        "p5": 0.2,
+        "r10": 0.25,
+        "mrr": 0.5,
+        "ndcg10": 0.23938361568734454,
+        "latency_ms": 0.23
+      },
+      {
+        "query": "salwar set",
+        "type": "attribute",
+        "ranked": [
+          49,
+          41
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.14
+      },
+      {
+        "query": "anarkali kurta",
+        "type": "feature",
+        "ranked": [
+          27,
+          6,
+          42,
+          4,
+          1,
+          26,
+          41,
+          7,
+          38,
+          8
+        ],
+        "n_relevant": 9,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "bandhani print",
+        "type": "feature",
+        "ranked": [
+          27,
+          19,
+          45,
+          39,
+          18,
+          29,
+          31,
+          2,
+          7
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.12
+      },
+      {
+        "query": "gotta patti work",
+        "type": "feature",
+        "ranked": [
+          45,
+          32,
+          17,
+          46,
+          27,
+          8,
+          7,
+          10,
+          6,
+          20
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "mirror work kurta",
+        "type": "feature",
+        "ranked": [
+          47,
+          15,
+          6,
+          20,
+          3,
+          16,
+          38,
+          30,
+          4,
+          8
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.18
+      },
+      {
+        "query": "pure cotton kurta",
+        "type": "feature",
+        "ranked": [
+          14,
+          48,
+          50,
+          41,
+          10,
+          29,
+          38,
+          23,
+          51,
+          49
+        ],
+        "n_relevant": 13,
+        "p5": 1.0,
+        "r10": 0.7692307692307693,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.19
+      },
+      {
+        "query": "sleeveless kurta",
+        "type": "feature",
+        "ranked": [
+          19,
+          36,
+          50,
+          2,
+          30,
+          4,
+          8,
+          7,
+          31,
+          18
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "mandarin collar",
+        "type": "feature",
+        "ranked": [
+          6,
+          19,
+          24,
+          1,
+          16,
+          14
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.13
+      },
+      {
+        "query": "keyhole neck kurta",
+        "type": "feature",
+        "ranked": [
+          18,
+          35,
+          41,
+          7,
+          13,
+          46,
+          5,
+          39,
+          27,
+          12
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.2
+      },
+      {
+        "query": "thread work embroidered kurta",
+        "type": "feature",
+        "ranked": [
+          30,
+          3,
+          20,
+          6,
+          16,
+          38,
+          32,
+          44,
+          21,
+          25
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.22
+      },
+      {
+        "query": "floral printed kurta with palazzos",
+        "type": "feature",
+        "ranked": [
+          14,
+          2,
+          8,
+          7,
+          26,
+          1,
+          10,
+          24,
+          28,
+          9
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.25
+      },
+      {
+        "query": "ethnic motifs",
+        "type": "feature",
+        "ranked": [
+          40,
+          42,
+          34,
+          1,
+          22,
+          25,
+          13,
+          3,
+          16,
+          38
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.15
+      },
+      {
+        "query": "striped kurta",
+        "type": "feature",
+        "ranked": [
+          50,
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.17
+      },
+      {
+        "query": "geometric print",
+        "type": "feature",
+        "ranked": [
+          43,
+          39,
+          18,
+          29,
+          21,
+          50,
+          30,
+          27,
+          31,
+          2
+        ],
+        "n_relevant": 4,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.810582531061383,
+        "latency_ms": 0.15
+      },
+      {
+        "query": "red anarkali under 6000",
+        "type": "combined",
+        "ranked": [
+          27,
+          6,
+          4,
+          39,
+          45,
+          43,
+          42,
+          1,
+          41,
+          26
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.2
+      },
+      {
+        "query": "pink floral kurta below 3000",
+        "type": "combined",
+        "ranked": [
+          11,
+          29,
+          32,
+          46,
+          40,
+          42,
+          25,
+          51,
+          10,
+          33
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "blue kurta with dupatta under 5000",
+        "type": "combined",
+        "ranked": [
+          24,
+          22,
+          21,
+          3,
+          7,
+          33,
+          47,
+          20,
+          14,
+          25
+        ],
+        "n_relevant": 7,
+        "p5": 0.8,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 0.7709363892380909,
+        "latency_ms": 0.28
+      },
+      {
+        "query": "teal embroidered kurta",
+        "type": "combined",
+        "ranked": [
+          44,
+          26,
+          13,
+          33,
+          38,
+          32,
+          30,
+          21,
+          25,
+          41
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.19
+      },
+      {
+        "query": "black printed kurta below 2000",
+        "type": "combined",
+        "ranked": [
+          37,
+          5,
+          1,
+          19,
+          49,
+          4,
+          8,
+          24,
+          48,
+          36
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6509209298071326,
+        "latency_ms": 0.23
+      },
+      {
+        "query": "navy blue cotton kurta set",
+        "type": "combined",
+        "ranked": [
+          14,
+          47,
+          20,
+          7,
+          3,
+          24,
+          11,
+          21,
+          22,
+          33
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.8772153153380493,
+        "latency_ms": 0.23
+      },
+      {
+        "query": "elegant heavily embellished outfit for a wedding",
+        "type": "semantic",
+        "ranked": [
+          8
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.07142857142857142,
+        "mrr": 1.0,
+        "ndcg10": 0.22009176629808017,
+        "latency_ms": 0.21
+      },
+      {
+        "query": "light breathable outfit for summer",
+        "type": "semantic",
+        "ranked": [],
+        "n_relevant": 22,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.18
+      },
+      {
+        "query": "festive party wear with dupatta",
+        "type": "semantic",
+        "ranked": [
+          4,
+          36,
+          24,
+          2,
+          28,
+          22,
+          37,
+          21,
+          44,
+          48
+        ],
+        "n_relevant": 14,
+        "p5": 0.0,
+        "r10": 0.14285714285714285,
+        "mrr": 0.125,
+        "ndcg10": 0.13568544539116628,
+        "latency_ms": 0.19
+      },
+      {
+        "query": "affordable casual daily wear kurta",
+        "type": "semantic",
+        "ranked": [
+          11,
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48
+        ],
+        "n_relevant": 11,
+        "p5": 0.0,
+        "r10": 0.18181818181818182,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.15176219107803537,
+        "latency_ms": 0.23
+      },
+      {
+        "query": "black leather jacket",
+        "type": "negative",
+        "ranked": [
+          37,
+          5,
+          19,
+          1,
+          49
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "men's sneakers",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.13
+      },
+      {
+        "query": "formal suit for men",
+        "type": "negative",
+        "ranked": [
+          41
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.14
+      },
+      {
+        "query": "blue denim jeans",
+        "type": "negative",
+        "ranked": [
+          24,
+          47,
+          20,
+          21,
+          22,
+          3,
+          14,
+          7,
+          33,
+          11
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.15
+      },
+      {
+        "query": "gold necklace",
+        "type": "negative",
+        "ranked": [
+          36,
+          47
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.13
+      },
+      {
+        "query": "kurta under 500",
+        "type": "negative",
+        "ranked": [
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48,
+          50
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "kurta for men",
+        "type": "negative",
+        "ranked": [
+          4,
+          8,
+          7,
+          31,
+          18,
+          9,
+          24,
+          44,
+          48,
+          50
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.15
+      }
+    ],
+    "summary": {
+      "overall": {
+        "p5": 0.605,
+        "r10": 0.817,
+        "mrr": 0.824,
+        "ndcg10": 0.776
+      },
+      "neg_reject_rate": 0.143,
+      "latency_ms_mean": 0.212,
+      "by_type": {
+        "attribute": {
+          "p5": 0.586,
+          "r10": 0.831,
+          "mrr": 0.764,
+          "ndcg10": 0.721
+        },
+        "feature": {
+          "p5": 0.815,
+          "r10": 0.96,
+          "mrr": 1.0,
+          "ndcg10": 0.985
+        },
+        "combined": {
+          "p5": 0.433,
+          "r10": 0.952,
+          "mrr": 0.917,
+          "ndcg10": 0.883
+        },
+        "semantic": {
+          "p5": 0.25,
+          "r10": 0.099,
+          "mrr": 0.323,
+          "ndcg10": 0.127
+        }
+      }
+    }
+  },
+  {
+    "config": "bm25+filter",
+    "per_query": [
+      {
+        "query": "black kurta for women",
+        "type": "attribute",
+        "ranked": [
+          37,
+          5,
+          19,
+          1
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.1
+      },
+      {
+        "query": "navy blue kurta set",
+        "type": "attribute",
+        "ranked": [
+          47,
+          3,
+          14,
+          7
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.09
+      },
+      {
+        "query": "teal kurta",
+        "type": "attribute",
+        "ranked": [
+          44,
+          26,
+          13,
+          33,
+          38
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "pink kurta under 2500",
+        "type": "attribute",
+        "ranked": [
+          42,
+          11,
+          51
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "red kurta below 2000",
+        "type": "attribute",
+        "ranked": [
+          39
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "green kurta",
+        "type": "attribute",
+        "ranked": [
+          35,
+          18,
+          50,
+          10
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "sharara set",
+        "type": "attribute",
+        "ranked": [
+          46,
+          30,
+          36
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "skirt set for women",
+        "type": "attribute",
+        "ranked": [
+          32,
+          23
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "maroon kurta set under 4500",
+        "type": "attribute",
+        "ranked": [
+          28
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "cheap kurta under 1500",
+        "type": "attribute",
+        "ranked": [
+          18,
+          5,
+          35,
+          43,
+          34
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "yellow kurta",
+        "type": "attribute",
+        "ranked": [
+          9,
+          17,
+          12,
+          43
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "kurta between 3000 and 4000",
+        "type": "attribute",
+        "ranked": [
+          4,
+          7,
+          28,
+          22,
+          25,
+          13,
+          15,
+          33,
+          29,
+          6
+        ],
+        "n_relevant": 11,
+        "p5": 1.0,
+        "r10": 0.9090909090909091,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.09
+      },
+      {
+        "query": "kurta over 5000",
+        "type": "attribute",
+        "ranked": [
+          8,
+          44,
+          1,
+          2,
+          10,
+          16,
+          38,
+          27
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "salwar set",
+        "type": "attribute",
+        "ranked": [
+          49,
+          41
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "anarkali kurta",
+        "type": "feature",
+        "ranked": [
+          27,
+          6,
+          42,
+          1,
+          4,
+          26,
+          7,
+          38
+        ],
+        "n_relevant": 9,
+        "p5": 1.0,
+        "r10": 0.8888888888888888,
+        "mrr": 1.0,
+        "ndcg10": 0.9292442392789195,
+        "latency_ms": 0.13
+      },
+      {
+        "query": "bandhani print",
+        "type": "feature",
+        "ranked": [
+          27,
+          19,
+          45,
+          39,
+          18,
+          29,
+          31,
+          2,
+          7
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.12
+      },
+      {
+        "query": "gotta patti work",
+        "type": "feature",
+        "ranked": [
+          45,
+          32,
+          17,
+          46,
+          27,
+          8,
+          7,
+          10,
+          6,
+          20
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.17
+      },
+      {
+        "query": "mirror work kurta",
+        "type": "feature",
+        "ranked": [
+          47,
+          15,
+          6,
+          20,
+          3,
+          16,
+          38
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.15
+      },
+      {
+        "query": "pure cotton kurta",
+        "type": "feature",
+        "ranked": [
+          14,
+          48,
+          50,
+          10,
+          29,
+          38,
+          51,
+          9,
+          4,
+          7
+        ],
+        "n_relevant": 13,
+        "p5": 1.0,
+        "r10": 0.7692307692307693,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "sleeveless kurta",
+        "type": "feature",
+        "ranked": [
+          19,
+          50,
+          2
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 0.6,
+        "mrr": 1.0,
+        "ndcg10": 0.7227265726449519,
+        "latency_ms": 0.12
+      },
+      {
+        "query": "mandarin collar",
+        "type": "feature",
+        "ranked": [
+          6,
+          19,
+          24,
+          1,
+          16,
+          14
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "keyhole neck kurta",
+        "type": "feature",
+        "ranked": [
+          18,
+          35,
+          7,
+          13,
+          5,
+          39,
+          27,
+          12,
+          40,
+          42
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg10": 0.7751482523375256,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "thread work embroidered kurta",
+        "type": "feature",
+        "ranked": [
+          3,
+          20,
+          6,
+          16,
+          38,
+          44,
+          25,
+          47,
+          12,
+          15
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 0.8333333333333334,
+        "mrr": 1.0,
+        "ndcg10": 0.8922108454754891,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "floral printed kurta with palazzos",
+        "type": "feature",
+        "ranked": [
+          14,
+          2,
+          8,
+          7,
+          26,
+          1,
+          10,
+          24,
+          28,
+          9
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.2
+      },
+      {
+        "query": "ethnic motifs",
+        "type": "feature",
+        "ranked": [
+          40,
+          42,
+          34,
+          1,
+          22,
+          25,
+          13,
+          3,
+          16,
+          38
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.14
+      },
+      {
+        "query": "striped kurta",
+        "type": "feature",
+        "ranked": [
+          50
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.11
+      },
+      {
+        "query": "geometric print",
+        "type": "feature",
+        "ranked": [
+          43,
+          39,
+          18,
+          29,
+          21,
+          50,
+          30,
+          27,
+          31,
+          2
+        ],
+        "n_relevant": 4,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.810582531061383,
+        "latency_ms": 0.14
+      },
+      {
+        "query": "red anarkali under 6000",
+        "type": "combined",
+        "ranked": [
+          27,
+          6,
+          4
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "pink floral kurta below 3000",
+        "type": "combined",
+        "ranked": [
+          11
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.09
+      },
+      {
+        "query": "blue kurta with dupatta under 5000",
+        "type": "combined",
+        "ranked": [
+          24,
+          22,
+          26,
+          7,
+          13,
+          33,
+          3
+        ],
+        "n_relevant": 7,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.1
+      },
+      {
+        "query": "teal embroidered kurta",
+        "type": "combined",
+        "ranked": [
+          44
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.09
+      },
+      {
+        "query": "black printed kurta below 2000",
+        "type": "combined",
+        "ranked": [
+          5,
+          19
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.09
+      },
+      {
+        "query": "navy blue cotton kurta set",
+        "type": "combined",
+        "ranked": [
+          14,
+          7
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "elegant heavily embellished outfit for a wedding",
+        "type": "semantic",
+        "ranked": [
+          8
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.07142857142857142,
+        "mrr": 1.0,
+        "ndcg10": 0.22009176629808017,
+        "latency_ms": 0.21
+      },
+      {
+        "query": "light breathable outfit for summer",
+        "type": "semantic",
+        "ranked": [],
+        "n_relevant": 22,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.17
+      },
+      {
+        "query": "festive party wear with dupatta",
+        "type": "semantic",
+        "ranked": [
+          4,
+          36,
+          24,
+          2,
+          28,
+          22,
+          37,
+          21,
+          44,
+          48
+        ],
+        "n_relevant": 14,
+        "p5": 0.0,
+        "r10": 0.14285714285714285,
+        "mrr": 0.125,
+        "ndcg10": 0.13568544539116628,
+        "latency_ms": 0.19
+      },
+      {
+        "query": "affordable casual daily wear kurta",
+        "type": "semantic",
+        "ranked": [
+          11
+        ],
+        "n_relevant": 11,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.16
+      },
+      {
+        "query": "black leather jacket",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "men's sneakers",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "formal suit for men",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "blue denim jeans",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.08
+      },
+      {
+        "query": "gold necklace",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "kurta under 500",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "kurta for men",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      }
+    ],
+    "summary": {
+      "overall": {
+        "p5": 0.87,
+        "r10": 0.854,
+        "mrr": 0.922,
+        "ndcg10": 0.878
+      },
+      "neg_reject_rate": 1.0,
+      "latency_ms_mean": 0.108,
+      "by_type": {
+        "attribute": {
+          "p5": 1.0,
+          "r10": 0.994,
+          "mrr": 1.0,
+          "ndcg10": 1.0
+        },
+        "feature": {
+          "p5": 0.862,
+          "r10": 0.882,
+          "mrr": 1.0,
+          "ndcg10": 0.933
+        },
+        "combined": {
+          "p5": 1.0,
+          "r10": 1.0,
+          "mrr": 1.0,
+          "ndcg10": 1.0
+        },
+        "semantic": {
+          "p5": 0.25,
+          "r10": 0.054,
+          "mrr": 0.281,
+          "ndcg10": 0.089
+        }
+      }
+    }
+  },
+  {
+    "config": "dense",
+    "per_query": [
+      {
+        "query": "black kurta for women",
+        "type": "attribute",
+        "ranked": [
+          5,
+          37,
+          1,
+          19,
+          18,
+          35,
+          49,
+          42,
+          40,
+          12
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.78
+      },
+      {
+        "query": "navy blue kurta set",
+        "type": "attribute",
+        "ranked": [
+          3,
+          7,
+          14,
+          47,
+          20,
+          21,
+          22,
+          44,
+          24,
+          13
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.54
+      },
+      {
+        "query": "teal kurta",
+        "type": "attribute",
+        "ranked": [
+          44,
+          13,
+          26,
+          38,
+          33,
+          18,
+          35,
+          5,
+          42,
+          11
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.39
+      },
+      {
+        "query": "pink kurta under 2500",
+        "type": "attribute",
+        "ranked": [
+          40,
+          11,
+          51,
+          42,
+          29,
+          25,
+          46,
+          32,
+          33,
+          18
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.7328286204777911,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "red kurta below 2000",
+        "type": "attribute",
+        "ranked": [
+          39,
+          45,
+          6,
+          4,
+          27,
+          28,
+          16,
+          43,
+          51,
+          18
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.5
+      },
+      {
+        "query": "green kurta",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          50,
+          5,
+          10,
+          41,
+          24,
+          13,
+          44,
+          11
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9828920819566879,
+        "latency_ms": 0.4
+      },
+      {
+        "query": "sharara set",
+        "type": "attribute",
+        "ranked": [
+          30,
+          46,
+          36,
+          31,
+          16,
+          38,
+          49,
+          44,
+          32,
+          24
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "skirt set for women",
+        "type": "attribute",
+        "ranked": [
+          23,
+          32,
+          31,
+          16,
+          51,
+          7,
+          36,
+          33,
+          28,
+          44
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "maroon kurta set under 4500",
+        "type": "attribute",
+        "ranked": [
+          16,
+          28,
+          36,
+          51,
+          49,
+          31,
+          4,
+          11,
+          34,
+          7
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6309297535714575,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "cheap kurta under 1500",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          5,
+          12,
+          40,
+          39,
+          34,
+          8,
+          17,
+          13
+        ],
+        "n_relevant": 5,
+        "p5": 0.6,
+        "r10": 0.8,
+        "mrr": 1.0,
+        "ndcg10": 0.8357799744028238,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "yellow kurta",
+        "type": "attribute",
+        "ranked": [
+          35,
+          12,
+          17,
+          43,
+          9,
+          37,
+          18,
+          42,
+          51,
+          11
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.7606395682357036,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "kurta between 3000 and 4000",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          5,
+          12,
+          40,
+          39,
+          17,
+          34,
+          11,
+          51
+        ],
+        "n_relevant": 11,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "kurta over 5000",
+        "type": "attribute",
+        "ranked": [
+          18,
+          11,
+          12,
+          35,
+          44,
+          5,
+          42,
+          40,
+          6,
+          51
+        ],
+        "n_relevant": 8,
+        "p5": 0.2,
+        "r10": 0.125,
+        "mrr": 0.2,
+        "ndcg10": 0.09785159463516042,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "salwar set",
+        "type": "attribute",
+        "ranked": [
+          41,
+          49,
+          15,
+          16,
+          33,
+          13,
+          38,
+          44,
+          22,
+          47
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "anarkali kurta",
+        "type": "feature",
+        "ranked": [
+          42,
+          6,
+          27,
+          38,
+          7,
+          4,
+          18,
+          35,
+          41,
+          26
+        ],
+        "n_relevant": 9,
+        "p5": 1.0,
+        "r10": 0.8888888888888888,
+        "mrr": 1.0,
+        "ndcg10": 0.9154462691617211,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "bandhani print",
+        "type": "feature",
+        "ranked": [
+          45,
+          27,
+          19,
+          22,
+          47,
+          29,
+          49
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "gotta patti work",
+        "type": "feature",
+        "ranked": [
+          45,
+          17,
+          32,
+          46,
+          8,
+          27
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 0.75,
+        "mrr": 1.0,
+        "ndcg10": 0.8358912271816661,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "mirror work kurta",
+        "type": "feature",
+        "ranked": [
+          47,
+          15,
+          13,
+          20,
+          6,
+          16,
+          40,
+          44,
+          18,
+          42
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "pure cotton kurta",
+        "type": "feature",
+        "ranked": [
+          48,
+          18,
+          51,
+          49,
+          50,
+          29,
+          7,
+          35,
+          5,
+          12
+        ],
+        "n_relevant": 13,
+        "p5": 0.8,
+        "r10": 0.46153846153846156,
+        "mrr": 1.0,
+        "ndcg10": 0.6618313225363274,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "sleeveless kurta",
+        "type": "feature",
+        "ranked": [
+          19,
+          18,
+          35,
+          50,
+          12,
+          42,
+          5,
+          40,
+          2,
+          43
+        ],
+        "n_relevant": 5,
+        "p5": 0.4,
+        "r10": 0.6,
+        "mrr": 1.0,
+        "ndcg10": 0.5873259502392342,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "mandarin collar",
+        "type": "feature",
+        "ranked": [],
+        "n_relevant": 6,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "keyhole neck kurta",
+        "type": "feature",
+        "ranked": [
+          18,
+          35,
+          13,
+          7,
+          12,
+          5,
+          42,
+          43,
+          6,
+          11
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg10": 0.7751482523375256,
+        "latency_ms": 0.41
+      },
+      {
+        "query": "thread work embroidered kurta",
+        "type": "feature",
+        "ranked": [
+          20,
+          6,
+          3,
+          12,
+          16,
+          44,
+          25,
+          38,
+          21,
+          32
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.8333333333333334,
+        "mrr": 1.0,
+        "ndcg10": 0.8573475126545858,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "floral printed kurta with palazzos",
+        "type": "feature",
+        "ranked": [
+          8,
+          14,
+          7,
+          9,
+          26,
+          2,
+          24,
+          10,
+          4,
+          48
+        ],
+        "n_relevant": 5,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9747429528567877,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "ethnic motifs",
+        "type": "feature",
+        "ranked": [
+          40,
+          34,
+          1,
+          16,
+          42,
+          13,
+          38,
+          22,
+          25,
+          47
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "striped kurta",
+        "type": "feature",
+        "ranked": [
+          50,
+          35,
+          5,
+          12,
+          43,
+          18,
+          34,
+          17,
+          40,
+          19
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "geometric print",
+        "type": "feature",
+        "ranked": [
+          43
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 0.25,
+        "mrr": 1.0,
+        "ndcg10": 0.3903800499921017,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "red anarkali under 6000",
+        "type": "combined",
+        "ranked": [
+          6,
+          4,
+          27,
+          39,
+          45,
+          42,
+          16,
+          28,
+          41,
+          26
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "pink floral kurta below 3000",
+        "type": "combined",
+        "ranked": [
+          40,
+          11,
+          29,
+          42,
+          46,
+          32,
+          18,
+          25,
+          51,
+          39
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6309297535714575,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "blue kurta with dupatta under 5000",
+        "type": "combined",
+        "ranked": [
+          21,
+          7,
+          22,
+          24,
+          3,
+          44,
+          33,
+          25,
+          26,
+          13
+        ],
+        "n_relevant": 7,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.7894138424738288,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "teal embroidered kurta",
+        "type": "combined",
+        "ranked": [
+          44,
+          13,
+          38,
+          26,
+          33,
+          20,
+          12,
+          18,
+          3,
+          21
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "black printed kurta below 2000",
+        "type": "combined",
+        "ranked": [
+          5,
+          1,
+          19,
+          18,
+          35,
+          49,
+          37,
+          34,
+          39,
+          42
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9197207891481876,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "navy blue cotton kurta set",
+        "type": "combined",
+        "ranked": [
+          7,
+          14,
+          3,
+          47,
+          20,
+          48,
+          21,
+          31,
+          11,
+          22
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "elegant heavily embellished outfit for a wedding",
+        "type": "semantic",
+        "ranked": [
+          44,
+          30,
+          46,
+          16,
+          32,
+          25,
+          6,
+          8,
+          21,
+          41
+        ],
+        "n_relevant": 14,
+        "p5": 0.8,
+        "r10": 0.5714285714285714,
+        "mrr": 1.0,
+        "ndcg10": 0.8165901947515999,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "light breathable outfit for summer",
+        "type": "semantic",
+        "ranked": [
+          30
+        ],
+        "n_relevant": 22,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "festive party wear with dupatta",
+        "type": "semantic",
+        "ranked": [
+          44,
+          16,
+          32,
+          50,
+          10,
+          46,
+          30,
+          25,
+          37,
+          13
+        ],
+        "n_relevant": 14,
+        "p5": 0.8,
+        "r10": 0.5,
+        "mrr": 1.0,
+        "ndcg10": 0.7753366239771083,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "affordable casual daily wear kurta",
+        "type": "semantic",
+        "ranked": [
+          18,
+          40,
+          12,
+          35,
+          5,
+          17,
+          42,
+          20,
+          45,
+          34
+        ],
+        "n_relevant": 11,
+        "p5": 0.8,
+        "r10": 0.5454545454545454,
+        "mrr": 1.0,
+        "ndcg10": 0.6470538417566039,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "black leather jacket",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "men's sneakers",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "formal suit for men",
+        "type": "negative",
+        "ranked": [
+          16,
+          41
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "blue denim jeans",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.62
+      },
+      {
+        "query": "gold necklace",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "kurta under 500",
+        "type": "negative",
+        "ranked": [
+          18,
+          35,
+          5,
+          12,
+          40,
+          39,
+          45,
+          17,
+          34,
+          42
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "kurta for men",
+        "type": "negative",
+        "ranked": [
+          18,
+          5,
+          35,
+          12,
+          40,
+          17,
+          34,
+          42,
+          43,
+          16
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.34
+      }
+    ],
+    "summary": {
+      "overall": {
+        "p5": 0.573,
+        "r10": 0.776,
+        "mrr": 0.83,
+        "ndcg10": 0.773
+      },
+      "neg_reject_rate": 0.571,
+      "latency_ms_mean": 0.369,
+      "by_type": {
+        "attribute": {
+          "p5": 0.529,
+          "r10": 0.852,
+          "mrr": 0.764,
+          "ndcg10": 0.789
+        },
+        "feature": {
+          "p5": 0.677,
+          "r10": 0.705,
+          "mrr": 0.923,
+          "ndcg10": 0.769
+        },
+        "combined": {
+          "p5": 0.433,
+          "r10": 1.0,
+          "mrr": 0.833,
+          "ndcg10": 0.89
+        },
+        "semantic": {
+          "p5": 0.6,
+          "r10": 0.404,
+          "mrr": 0.75,
+          "ndcg10": 0.56
+        }
+      }
+    }
+  },
+  {
+    "config": "dense+filter",
+    "per_query": [
+      {
+        "query": "black kurta for women",
+        "type": "attribute",
+        "ranked": [
+          5,
+          37,
+          1,
+          19
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.44
+      },
+      {
+        "query": "navy blue kurta set",
+        "type": "attribute",
+        "ranked": [
+          3,
+          7,
+          14,
+          47
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "teal kurta",
+        "type": "attribute",
+        "ranked": [
+          44,
+          13,
+          26,
+          38,
+          33
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "pink kurta under 2500",
+        "type": "attribute",
+        "ranked": [
+          42,
+          11,
+          51
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "red kurta below 2000",
+        "type": "attribute",
+        "ranked": [
+          39
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "green kurta",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          50,
+          10
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "sharara set",
+        "type": "attribute",
+        "ranked": [
+          30,
+          46,
+          36
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "skirt set for women",
+        "type": "attribute",
+        "ranked": [
+          23,
+          32
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "maroon kurta set under 4500",
+        "type": "attribute",
+        "ranked": [
+          28
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "cheap kurta under 1500",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          5,
+          34,
+          43
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "yellow kurta",
+        "type": "attribute",
+        "ranked": [
+          12,
+          17,
+          43,
+          9
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.4
+      },
+      {
+        "query": "kurta between 3000 and 4000",
+        "type": "attribute",
+        "ranked": [
+          6,
+          20,
+          13,
+          28,
+          7,
+          22,
+          29,
+          25,
+          15,
+          4
+        ],
+        "n_relevant": 11,
+        "p5": 1.0,
+        "r10": 0.9090909090909091,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "kurta over 5000",
+        "type": "attribute",
+        "ranked": [
+          16,
+          44,
+          27,
+          1,
+          10,
+          2,
+          38,
+          8
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "salwar set",
+        "type": "attribute",
+        "ranked": [
+          41,
+          49
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "anarkali kurta",
+        "type": "feature",
+        "ranked": [
+          42,
+          6,
+          27,
+          38,
+          7,
+          4,
+          18,
+          35,
+          26,
+          39
+        ],
+        "n_relevant": 9,
+        "p5": 1.0,
+        "r10": 0.7777777777777778,
+        "mrr": 1.0,
+        "ndcg10": 0.8475028682434304,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "bandhani print",
+        "type": "feature",
+        "ranked": [
+          45,
+          27,
+          19,
+          22,
+          47,
+          29,
+          49
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "gotta patti work",
+        "type": "feature",
+        "ranked": [
+          45,
+          17,
+          32,
+          46,
+          8,
+          27
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 0.75,
+        "mrr": 1.0,
+        "ndcg10": 0.8358912271816661,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "mirror work kurta",
+        "type": "feature",
+        "ranked": [
+          47,
+          15,
+          13,
+          20,
+          6,
+          16,
+          40,
+          44,
+          18,
+          42
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "pure cotton kurta",
+        "type": "feature",
+        "ranked": [
+          48,
+          18,
+          51,
+          50,
+          29,
+          7,
+          35,
+          5,
+          12,
+          14
+        ],
+        "n_relevant": 13,
+        "p5": 0.8,
+        "r10": 0.46153846153846156,
+        "mrr": 1.0,
+        "ndcg10": 0.6520881886359191,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "sleeveless kurta",
+        "type": "feature",
+        "ranked": [
+          19,
+          18,
+          35,
+          50,
+          12,
+          42,
+          5,
+          40,
+          2,
+          43
+        ],
+        "n_relevant": 5,
+        "p5": 0.4,
+        "r10": 0.6,
+        "mrr": 1.0,
+        "ndcg10": 0.5873259502392342,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "mandarin collar",
+        "type": "feature",
+        "ranked": [],
+        "n_relevant": 6,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "keyhole neck kurta",
+        "type": "feature",
+        "ranked": [
+          18,
+          35,
+          13,
+          7,
+          12,
+          5,
+          42,
+          43,
+          6,
+          11
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg10": 0.7751482523375256,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "thread work embroidered kurta",
+        "type": "feature",
+        "ranked": [
+          20,
+          6,
+          3,
+          12,
+          16,
+          44,
+          25,
+          38,
+          18,
+          35
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.8333333333333334,
+        "mrr": 1.0,
+        "ndcg10": 0.8573475126545858,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "floral printed kurta with palazzos",
+        "type": "feature",
+        "ranked": [
+          8,
+          14,
+          7,
+          9,
+          26,
+          2,
+          24,
+          10,
+          4,
+          48
+        ],
+        "n_relevant": 5,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9747429528567877,
+        "latency_ms": 0.4
+      },
+      {
+        "query": "ethnic motifs",
+        "type": "feature",
+        "ranked": [
+          40,
+          34,
+          1,
+          16,
+          42,
+          13,
+          38,
+          22,
+          25,
+          47
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "striped kurta",
+        "type": "feature",
+        "ranked": [
+          50,
+          35,
+          5,
+          12,
+          43,
+          18,
+          34,
+          17,
+          40,
+          19
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "geometric print",
+        "type": "feature",
+        "ranked": [
+          43
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 0.25,
+        "mrr": 1.0,
+        "ndcg10": 0.3903800499921017,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "red anarkali under 6000",
+        "type": "combined",
+        "ranked": [
+          6,
+          4,
+          27,
+          39,
+          45
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "pink floral kurta below 3000",
+        "type": "combined",
+        "ranked": [
+          40,
+          11,
+          42,
+          51
+        ],
+        "n_relevant": 1,
+        "p5": 0.25,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6309297535714575,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "blue kurta with dupatta under 5000",
+        "type": "combined",
+        "ranked": [
+          22,
+          7,
+          24,
+          3,
+          33,
+          13,
+          26,
+          47,
+          14,
+          20
+        ],
+        "n_relevant": 7,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "teal embroidered kurta",
+        "type": "combined",
+        "ranked": [
+          44,
+          13,
+          38,
+          26,
+          33
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "black printed kurta below 2000",
+        "type": "combined",
+        "ranked": [
+          5,
+          19
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "navy blue cotton kurta set",
+        "type": "combined",
+        "ranked": [
+          7,
+          14,
+          3,
+          47
+        ],
+        "n_relevant": 2,
+        "p5": 0.5,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "elegant heavily embellished outfit for a wedding",
+        "type": "semantic",
+        "ranked": [
+          44,
+          30,
+          46,
+          16,
+          32,
+          25,
+          6,
+          8,
+          21,
+          41
+        ],
+        "n_relevant": 14,
+        "p5": 0.8,
+        "r10": 0.5714285714285714,
+        "mrr": 1.0,
+        "ndcg10": 0.8165901947515999,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "light breathable outfit for summer",
+        "type": "semantic",
+        "ranked": [
+          30
+        ],
+        "n_relevant": 22,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "festive party wear with dupatta",
+        "type": "semantic",
+        "ranked": [
+          44,
+          16,
+          32,
+          50,
+          10,
+          46,
+          30,
+          25,
+          37,
+          13
+        ],
+        "n_relevant": 14,
+        "p5": 0.8,
+        "r10": 0.5,
+        "mrr": 1.0,
+        "ndcg10": 0.7753366239771083,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "affordable casual daily wear kurta",
+        "type": "semantic",
+        "ranked": [
+          18,
+          40,
+          12,
+          35,
+          5,
+          17,
+          42,
+          20,
+          45,
+          34
+        ],
+        "n_relevant": 11,
+        "p5": 0.8,
+        "r10": 0.5454545454545454,
+        "mrr": 1.0,
+        "ndcg10": 0.6470538417566039,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "black leather jacket",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "men's sneakers",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "formal suit for men",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "blue denim jeans",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "gold necklace",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "kurta under 500",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "kurta for men",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.08
+      }
+    ],
+    "summary": {
+      "overall": {
+        "p5": 0.777,
+        "r10": 0.826,
+        "mrr": 0.932,
+        "ndcg10": 0.859
+      },
+      "neg_reject_rate": 1.0,
+      "latency_ms_mean": 0.319,
+      "by_type": {
+        "attribute": {
+          "p5": 1.0,
+          "r10": 0.994,
+          "mrr": 1.0,
+          "ndcg10": 1.0
+        },
+        "feature": {
+          "p5": 0.677,
+          "r10": 0.696,
+          "mrr": 0.923,
+          "ndcg10": 0.763
+        },
+        "combined": {
+          "p5": 0.592,
+          "r10": 1.0,
+          "mrr": 0.917,
+          "ndcg10": 0.938
+        },
+        "semantic": {
+          "p5": 0.6,
+          "r10": 0.404,
+          "mrr": 0.75,
+          "ndcg10": 0.56
+        }
+      }
+    }
+  },
+  {
+    "config": "hybrid",
+    "per_query": [
+      {
+        "query": "black kurta for women",
+        "type": "attribute",
+        "ranked": [
+          5,
+          37,
+          1,
+          19,
+          49,
+          18,
+          35,
+          31,
+          7,
+          44
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.58
+      },
+      {
+        "query": "navy blue kurta set",
+        "type": "attribute",
+        "ranked": [
+          3,
+          47,
+          7,
+          20,
+          14,
+          21,
+          24,
+          22,
+          33,
+          25
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9828920819566879,
+        "latency_ms": 0.52
+      },
+      {
+        "query": "teal kurta",
+        "type": "attribute",
+        "ranked": [
+          44,
+          13,
+          26,
+          33,
+          38,
+          18,
+          24,
+          5,
+          35,
+          7
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.54
+      },
+      {
+        "query": "pink kurta under 2500",
+        "type": "attribute",
+        "ranked": [
+          40,
+          42,
+          11,
+          25,
+          32,
+          51,
+          29,
+          46,
+          33,
+          10
+        ],
+        "n_relevant": 3,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6978817289434457,
+        "latency_ms": 0.52
+      },
+      {
+        "query": "red kurta below 2000",
+        "type": "attribute",
+        "ranked": [
+          39,
+          4,
+          45,
+          6,
+          27,
+          43,
+          18,
+          28,
+          8,
+          31
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.51
+      },
+      {
+        "query": "green kurta",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          50,
+          24,
+          10,
+          41,
+          5,
+          30,
+          44,
+          13
+        ],
+        "n_relevant": 4,
+        "p5": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9828920819566879,
+        "latency_ms": 0.48
+      },
+      {
+        "query": "sharara set",
+        "type": "attribute",
+        "ranked": [
+          30,
+          46,
+          36,
+          31,
+          16,
+          38,
+          49,
+          44,
+          32,
+          24
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.41
+      },
+      {
+        "query": "skirt set for women",
+        "type": "attribute",
+        "ranked": [
+          23,
+          32,
+          31,
+          16,
+          51,
+          7,
+          36,
+          33,
+          28,
+          44
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.43
+      },
+      {
+        "query": "maroon kurta set under 4500",
+        "type": "attribute",
+        "ranked": [
+          36,
+          28,
+          16,
+          34,
+          4,
+          31,
+          7,
+          8,
+          44,
+          48
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.6309297535714575,
+        "latency_ms": 0.51
+      },
+      {
+        "query": "cheap kurta under 1500",
+        "type": "attribute",
+        "ranked": [
+          18,
+          8,
+          4,
+          5,
+          7,
+          35,
+          44,
+          48,
+          39,
+          13
+        ],
+        "n_relevant": 5,
+        "p5": 0.4,
+        "r10": 0.6,
+        "mrr": 1.0,
+        "ndcg10": 0.6060398578158167,
+        "latency_ms": 0.5
+      },
+      {
+        "query": "yellow kurta",
+        "type": "attribute",
+        "ranked": [
+          35,
+          9,
+          17,
+          12,
+          37,
+          43,
+          18,
+          8,
+          50,
+          44
+        ],
+        "n_relevant": 4,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 0.5,
+        "ndcg10": 0.7486761295186739,
+        "latency_ms": 0.47
+      },
+      {
+        "query": "kurta between 3000 and 4000",
+        "type": "attribute",
+        "ranked": [
+          18,
+          5,
+          8,
+          35,
+          44,
+          7,
+          31,
+          39,
+          48,
+          13
+        ],
+        "n_relevant": 11,
+        "p5": 0.0,
+        "r10": 0.18181818181818182,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.14201905717762703,
+        "latency_ms": 0.51
+      },
+      {
+        "query": "kurta over 5000",
+        "type": "attribute",
+        "ranked": [
+          18,
+          44,
+          31,
+          7,
+          5,
+          8,
+          35,
+          48,
+          11,
+          13
+        ],
+        "n_relevant": 8,
+        "p5": 0.2,
+        "r10": 0.25,
+        "mrr": 0.5,
+        "ndcg10": 0.24968908577726404,
+        "latency_ms": 0.47
+      },
+      {
+        "query": "salwar set",
+        "type": "attribute",
+        "ranked": [
+          41,
+          49,
+          15,
+          16,
+          33,
+          13,
+          38,
+          44,
+          22,
+          47
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.49
+      },
+      {
+        "query": "anarkali kurta",
+        "type": "feature",
+        "ranked": [
+          27,
+          42,
+          6,
+          4,
+          38,
+          7,
+          26,
+          41,
+          18,
+          1
+        ],
+        "n_relevant": 9,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9971876401972103,
+        "latency_ms": 0.48
+      },
+      {
+        "query": "bandhani print",
+        "type": "feature",
+        "ranked": [
+          27,
+          45,
+          19,
+          29,
+          22,
+          39,
+          18,
+          47,
+          31,
+          49
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.48
+      },
+      {
+        "query": "gotta patti work",
+        "type": "feature",
+        "ranked": [
+          45,
+          17,
+          32,
+          46,
+          8,
+          27,
+          7,
+          10,
+          6,
+          20
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.49
+      },
+      {
+        "query": "mirror work kurta",
+        "type": "feature",
+        "ranked": [
+          47,
+          15,
+          6,
+          20,
+          16,
+          3,
+          18,
+          38,
+          44,
+          13
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.5
+      },
+      {
+        "query": "pure cotton kurta",
+        "type": "feature",
+        "ranked": [
+          48,
+          50,
+          14,
+          51,
+          29,
+          49,
+          10,
+          7,
+          41,
+          18
+        ],
+        "n_relevant": 13,
+        "p5": 1.0,
+        "r10": 0.6923076923076923,
+        "mrr": 1.0,
+        "ndcg10": 0.9363792118010481,
+        "latency_ms": 0.5
+      },
+      {
+        "query": "sleeveless kurta",
+        "type": "feature",
+        "ranked": [
+          19,
+          50,
+          18,
+          2,
+          35,
+          5,
+          36,
+          7,
+          48,
+          9
+        ],
+        "n_relevant": 5,
+        "p5": 0.6,
+        "r10": 0.8,
+        "mrr": 1.0,
+        "ndcg10": 0.8122682216087221,
+        "latency_ms": 0.48
+      },
+      {
+        "query": "mandarin collar",
+        "type": "feature",
+        "ranked": [
+          6,
+          19,
+          24,
+          1,
+          16,
+          14
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "keyhole neck kurta",
+        "type": "feature",
+        "ranked": [
+          18,
+          35,
+          13,
+          7,
+          5,
+          12,
+          39,
+          42,
+          27,
+          43
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg10": 0.7751482523375256,
+        "latency_ms": 0.51
+      },
+      {
+        "query": "thread work embroidered kurta",
+        "type": "feature",
+        "ranked": [
+          20,
+          3,
+          6,
+          16,
+          30,
+          38,
+          44,
+          25,
+          32,
+          12
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.54
+      },
+      {
+        "query": "floral printed kurta with palazzos",
+        "type": "feature",
+        "ranked": [
+          14,
+          8,
+          7,
+          2,
+          26,
+          9,
+          10,
+          24,
+          1,
+          28
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.59
+      },
+      {
+        "query": "ethnic motifs",
+        "type": "feature",
+        "ranked": [
+          40,
+          34,
+          42,
+          1,
+          16,
+          22,
+          13,
+          25,
+          38,
+          3
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.45
+      },
+      {
+        "query": "striped kurta",
+        "type": "feature",
+        "ranked": [
+          50,
+          18,
+          5,
+          35,
+          9,
+          37,
+          39,
+          11,
+          4,
+          8
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.46
+      },
+      {
+        "query": "geometric print",
+        "type": "feature",
+        "ranked": [
+          43,
+          39,
+          18,
+          29,
+          21,
+          50,
+          30,
+          27,
+          31,
+          2
+        ],
+        "n_relevant": 4,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.810582531061383,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "red anarkali under 6000",
+        "type": "combined",
+        "ranked": [
+          6,
+          27,
+          4,
+          39,
+          45,
+          42,
+          41,
+          26,
+          43,
+          7
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.46
+      },
+      {
+        "query": "pink floral kurta below 3000",
+        "type": "combined",
+        "ranked": [
+          11,
+          29,
+          40,
+          32,
+          46,
+          42,
+          25,
+          51,
+          18,
+          39
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.69
+      },
+      {
+        "query": "blue kurta with dupatta under 5000",
+        "type": "combined",
+        "ranked": [
+          21,
+          24,
+          22,
+          7,
+          3,
+          33,
+          25,
+          14,
+          47,
+          44
+        ],
+        "n_relevant": 7,
+        "p5": 0.8,
+        "r10": 0.7142857142857143,
+        "mrr": 0.5,
+        "ndcg10": 0.6334982227809455,
+        "latency_ms": 0.7
+      },
+      {
+        "query": "teal embroidered kurta",
+        "type": "combined",
+        "ranked": [
+          44,
+          13,
+          26,
+          38,
+          33,
+          21,
+          20,
+          12,
+          3,
+          25
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.58
+      },
+      {
+        "query": "black printed kurta below 2000",
+        "type": "combined",
+        "ranked": [
+          5,
+          1,
+          19,
+          37,
+          49,
+          8,
+          35,
+          28,
+          4,
+          48
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.9197207891481876,
+        "latency_ms": 0.57
+      },
+      {
+        "query": "navy blue cotton kurta set",
+        "type": "combined",
+        "ranked": [
+          14,
+          7,
+          47,
+          3,
+          20,
+          21,
+          11,
+          24,
+          22,
+          48
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.54
+      },
+      {
+        "query": "elegant heavily embellished outfit for a wedding",
+        "type": "semantic",
+        "ranked": [
+          8,
+          44,
+          30,
+          46,
+          16,
+          32,
+          25,
+          6,
+          21,
+          41
+        ],
+        "n_relevant": 14,
+        "p5": 0.8,
+        "r10": 0.5714285714285714,
+        "mrr": 1.0,
+        "ndcg10": 0.8357804136936718,
+        "latency_ms": 0.52
+      },
+      {
+        "query": "light breathable outfit for summer",
+        "type": "semantic",
+        "ranked": [
+          30
+        ],
+        "n_relevant": 22,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.51
+      },
+      {
+        "query": "festive party wear with dupatta",
+        "type": "semantic",
+        "ranked": [
+          44,
+          50,
+          32,
+          2,
+          37,
+          4,
+          28,
+          25,
+          16,
+          10
+        ],
+        "n_relevant": 14,
+        "p5": 0.4,
+        "r10": 0.35714285714285715,
+        "mrr": 1.0,
+        "ndcg10": 0.5294438830372382,
+        "latency_ms": 0.49
+      },
+      {
+        "query": "affordable casual daily wear kurta",
+        "type": "semantic",
+        "ranked": [
+          18,
+          11,
+          8,
+          5,
+          44,
+          35,
+          7,
+          31,
+          48,
+          39
+        ],
+        "n_relevant": 11,
+        "p5": 0.4,
+        "r10": 0.36363636363636365,
+        "mrr": 1.0,
+        "ndcg10": 0.456899187845258,
+        "latency_ms": 0.5
+      },
+      {
+        "query": "black leather jacket",
+        "type": "negative",
+        "ranked": [
+          37,
+          5,
+          19,
+          1,
+          49
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.44
+      },
+      {
+        "query": "men's sneakers",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.4
+      },
+      {
+        "query": "formal suit for men",
+        "type": "negative",
+        "ranked": [
+          41,
+          16
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "blue denim jeans",
+        "type": "negative",
+        "ranked": [
+          24,
+          47,
+          20,
+          21,
+          22,
+          3,
+          14,
+          7,
+          33,
+          11
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.46
+      },
+      {
+        "query": "gold necklace",
+        "type": "negative",
+        "ranked": [
+          36,
+          47
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.48
+      },
+      {
+        "query": "kurta under 500",
+        "type": "negative",
+        "ranked": [
+          18,
+          5,
+          35,
+          7,
+          48,
+          50,
+          44,
+          39,
+          13,
+          22
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.44
+      },
+      {
+        "query": "kurta for men",
+        "type": "negative",
+        "ranked": [
+          18,
+          5,
+          35,
+          50,
+          31,
+          44,
+          13,
+          16,
+          39,
+          11
+        ],
+        "n_relevant": 0,
+        "rejected": false,
+        "latency_ms": 0.43
+      }
+    ],
+    "summary": {
+      "overall": {
+        "p5": 0.568,
+        "r10": 0.835,
+        "mrr": 0.883,
+        "ndcg10": 0.831
+      },
+      "neg_reject_rate": 0.143,
+      "latency_ms_mean": 0.497,
+      "by_type": {
+        "attribute": {
+          "p5": 0.486,
+          "r10": 0.859,
+          "mrr": 0.798,
+          "ndcg10": 0.789
+        },
+        "feature": {
+          "p5": 0.769,
+          "r10": 0.913,
+          "mrr": 1.0,
+          "ndcg10": 0.949
+        },
+        "combined": {
+          "p5": 0.433,
+          "r10": 0.952,
+          "mrr": 0.917,
+          "ndcg10": 0.926
+        },
+        "semantic": {
+          "p5": 0.4,
+          "r10": 0.323,
+          "mrr": 0.75,
+          "ndcg10": 0.456
+        }
+      }
+    }
+  },
+  {
+    "config": "hybrid+filter",
+    "per_query": [
+      {
+        "query": "black kurta for women",
+        "type": "attribute",
+        "ranked": [
+          5,
+          37,
+          1,
+          19
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "navy blue kurta set",
+        "type": "attribute",
+        "ranked": [
+          3,
+          47,
+          7,
+          14
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.37
+      },
+      {
+        "query": "teal kurta",
+        "type": "attribute",
+        "ranked": [
+          44,
+          13,
+          26,
+          33,
+          38
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "pink kurta under 2500",
+        "type": "attribute",
+        "ranked": [
+          42,
+          11,
+          51
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "red kurta below 2000",
+        "type": "attribute",
+        "ranked": [
+          39
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.35
+      },
+      {
+        "query": "green kurta",
+        "type": "attribute",
+        "ranked": [
+          18,
+          35,
+          50,
+          10
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "sharara set",
+        "type": "attribute",
+        "ranked": [
+          30,
+          46,
+          36
+        ],
+        "n_relevant": 3,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "skirt set for women",
+        "type": "attribute",
+        "ranked": [
+          23,
+          32
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "maroon kurta set under 4500",
+        "type": "attribute",
+        "ranked": [
+          28
+        ],
+        "n_relevant": 1,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "cheap kurta under 1500",
+        "type": "attribute",
+        "ranked": [
+          18,
+          5,
+          35,
+          34,
+          43
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "yellow kurta",
+        "type": "attribute",
+        "ranked": [
+          12,
+          17,
+          9,
+          43
+        ],
+        "n_relevant": 4,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.32
+      },
+      {
+        "query": "kurta between 3000 and 4000",
+        "type": "attribute",
+        "ranked": [
+          7,
+          28,
+          13,
+          22,
+          4,
+          6,
+          20,
+          25,
+          15,
+          29
+        ],
+        "n_relevant": 11,
+        "p5": 1.0,
+        "r10": 0.9090909090909091,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "kurta over 5000",
+        "type": "attribute",
+        "ranked": [
+          44,
+          16,
+          1,
+          8,
+          2,
+          10,
+          27,
+          38
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.51
+      },
+      {
+        "query": "salwar set",
+        "type": "attribute",
+        "ranked": [
+          41,
+          49
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.33
+      },
+      {
+        "query": "anarkali kurta",
+        "type": "feature",
+        "ranked": [
+          27,
+          42,
+          6,
+          4,
+          38,
+          7,
+          26,
+          1,
+          18,
+          35
+        ],
+        "n_relevant": 9,
+        "p5": 1.0,
+        "r10": 0.8888888888888888,
+        "mrr": 1.0,
+        "ndcg10": 0.9292442392789195,
+        "latency_ms": 0.41
+      },
+      {
+        "query": "bandhani print",
+        "type": "feature",
+        "ranked": [
+          27,
+          45,
+          19,
+          29,
+          22,
+          39,
+          18,
+          47,
+          31,
+          49
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.43
+      },
+      {
+        "query": "gotta patti work",
+        "type": "feature",
+        "ranked": [
+          45,
+          17,
+          32,
+          46,
+          8,
+          27,
+          7,
+          10,
+          6,
+          20
+        ],
+        "n_relevant": 8,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.53
+      },
+      {
+        "query": "mirror work kurta",
+        "type": "feature",
+        "ranked": [
+          47,
+          15,
+          6,
+          20,
+          16,
+          3,
+          38,
+          13,
+          40,
+          44
+        ],
+        "n_relevant": 2,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "pure cotton kurta",
+        "type": "feature",
+        "ranked": [
+          48,
+          50,
+          51,
+          29,
+          14,
+          7,
+          10,
+          18,
+          38,
+          5
+        ],
+        "n_relevant": 13,
+        "p5": 1.0,
+        "r10": 0.6153846153846154,
+        "mrr": 1.0,
+        "ndcg10": 0.8669479898642709,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "sleeveless kurta",
+        "type": "feature",
+        "ranked": [
+          19,
+          50,
+          2,
+          18,
+          35,
+          12,
+          42,
+          5,
+          40,
+          43
+        ],
+        "n_relevant": 5,
+        "p5": 0.6,
+        "r10": 0.6,
+        "mrr": 1.0,
+        "ndcg10": 0.7227265726449519,
+        "latency_ms": 0.41
+      },
+      {
+        "query": "mandarin collar",
+        "type": "feature",
+        "ranked": [
+          6,
+          19,
+          24,
+          1,
+          16,
+          14
+        ],
+        "n_relevant": 6,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "keyhole neck kurta",
+        "type": "feature",
+        "ranked": [
+          18,
+          35,
+          7,
+          13,
+          5,
+          12,
+          42,
+          43,
+          39,
+          27
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "ndcg10": 0.7751482523375256,
+        "latency_ms": 0.43
+      },
+      {
+        "query": "thread work embroidered kurta",
+        "type": "feature",
+        "ranked": [
+          20,
+          3,
+          6,
+          16,
+          44,
+          12,
+          38,
+          25,
+          47,
+          15
+        ],
+        "n_relevant": 6,
+        "p5": 0.8,
+        "r10": 0.8333333333333334,
+        "mrr": 1.0,
+        "ndcg10": 0.8760157235037966,
+        "latency_ms": 0.44
+      },
+      {
+        "query": "floral printed kurta with palazzos",
+        "type": "feature",
+        "ranked": [
+          14,
+          8,
+          7,
+          2,
+          26,
+          9,
+          10,
+          24,
+          1,
+          28
+        ],
+        "n_relevant": 5,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.48
+      },
+      {
+        "query": "ethnic motifs",
+        "type": "feature",
+        "ranked": [
+          40,
+          34,
+          42,
+          1,
+          16,
+          22,
+          13,
+          25,
+          38,
+          3
+        ],
+        "n_relevant": 14,
+        "p5": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "striped kurta",
+        "type": "feature",
+        "ranked": [
+          50,
+          35,
+          5,
+          12,
+          43,
+          18,
+          34,
+          17,
+          40,
+          19
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.39
+      },
+      {
+        "query": "geometric print",
+        "type": "feature",
+        "ranked": [
+          43,
+          39,
+          18,
+          29,
+          21,
+          50,
+          30,
+          27,
+          31,
+          2
+        ],
+        "n_relevant": 4,
+        "p5": 0.4,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 0.810582531061383,
+        "latency_ms": 0.43
+      },
+      {
+        "query": "red anarkali under 6000",
+        "type": "combined",
+        "ranked": [
+          6,
+          27,
+          4,
+          39,
+          45
+        ],
+        "n_relevant": 3,
+        "p5": 0.6,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.36
+      },
+      {
+        "query": "pink floral kurta below 3000",
+        "type": "combined",
+        "ranked": [
+          11,
+          40,
+          42,
+          51
+        ],
+        "n_relevant": 1,
+        "p5": 0.25,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.43
+      },
+      {
+        "query": "blue kurta with dupatta under 5000",
+        "type": "combined",
+        "ranked": [
+          22,
+          24,
+          7,
+          26,
+          3,
+          13,
+          33,
+          47,
+          14,
+          20
+        ],
+        "n_relevant": 7,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.38
+      },
+      {
+        "query": "teal embroidered kurta",
+        "type": "combined",
+        "ranked": [
+          44,
+          13,
+          38,
+          26,
+          33
+        ],
+        "n_relevant": 1,
+        "p5": 0.2,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "black printed kurta below 2000",
+        "type": "combined",
+        "ranked": [
+          5,
+          19
+        ],
+        "n_relevant": 2,
+        "p5": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.34
+      },
+      {
+        "query": "navy blue cotton kurta set",
+        "type": "combined",
+        "ranked": [
+          7,
+          14,
+          3,
+          47
+        ],
+        "n_relevant": 2,
+        "p5": 0.5,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "ndcg10": 1.0,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "elegant heavily embellished outfit for a wedding",
+        "type": "semantic",
+        "ranked": [
+          8,
+          44,
+          30,
+          46,
+          16,
+          32,
+          25,
+          6,
+          21,
+          41
+        ],
+        "n_relevant": 14,
+        "p5": 0.8,
+        "r10": 0.5714285714285714,
+        "mrr": 1.0,
+        "ndcg10": 0.8357804136936718,
+        "latency_ms": 0.46
+      },
+      {
+        "query": "light breathable outfit for summer",
+        "type": "semantic",
+        "ranked": [
+          30
+        ],
+        "n_relevant": 22,
+        "p5": 0.0,
+        "r10": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.0,
+        "latency_ms": 0.41
+      },
+      {
+        "query": "festive party wear with dupatta",
+        "type": "semantic",
+        "ranked": [
+          44,
+          50,
+          32,
+          2,
+          37,
+          4,
+          28,
+          25,
+          16,
+          10
+        ],
+        "n_relevant": 14,
+        "p5": 0.4,
+        "r10": 0.35714285714285715,
+        "mrr": 1.0,
+        "ndcg10": 0.5294438830372382,
+        "latency_ms": 0.44
+      },
+      {
+        "query": "affordable casual daily wear kurta",
+        "type": "semantic",
+        "ranked": [
+          11,
+          18,
+          40,
+          12,
+          35,
+          5,
+          17,
+          42,
+          20,
+          45
+        ],
+        "n_relevant": 11,
+        "p5": 0.6,
+        "r10": 0.45454545454545453,
+        "mrr": 0.5,
+        "ndcg10": 0.4666234168001789,
+        "latency_ms": 0.42
+      },
+      {
+        "query": "black leather jacket",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "men's sneakers",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "formal suit for men",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "blue denim jeans",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.31
+      },
+      {
+        "query": "gold necklace",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.06
+      },
+      {
+        "query": "kurta under 500",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      },
+      {
+        "query": "kurta for men",
+        "type": "negative",
+        "ranked": [],
+        "n_relevant": 0,
+        "rejected": true,
+        "latency_ms": 0.07
+      }
+    ],
+    "summary": {
+      "overall": {
+        "p5": 0.788,
+        "r10": 0.881,
+        "mrr": 0.959,
+        "ndcg10": 0.914
+      },
+      "neg_reject_rate": 1.0,
+      "latency_ms_mean": 0.349,
+      "by_type": {
+        "attribute": {
+          "p5": 1.0,
+          "r10": 0.994,
+          "mrr": 1.0,
+          "ndcg10": 1.0
+        },
+        "feature": {
+          "p5": 0.754,
+          "r10": 0.871,
+          "mrr": 1.0,
+          "ndcg10": 0.922
+        },
+        "combined": {
+          "p5": 0.592,
+          "r10": 1.0,
+          "mrr": 1.0,
+          "ndcg10": 1.0
+        },
+        "semantic": {
+          "p5": 0.45,
+          "r10": 0.346,
+          "mrr": 0.625,
+          "ndcg10": 0.458
+        }
+      }
+    }
+  }
+]

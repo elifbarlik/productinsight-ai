@@ -1,0 +1,44 @@
+{"query": "black kurta for women", "type": "attribute", "relevant": [1, 5, 19, 37]}
+{"query": "navy blue kurta set", "type": "attribute", "relevant": [3, 7, 14, 47]}
+{"query": "teal kurta", "type": "attribute", "relevant": [13, 26, 33, 38, 44]}
+{"query": "pink kurta under 2500", "type": "attribute", "relevant": [11, 42, 51]}
+{"query": "red kurta below 2000", "type": "attribute", "relevant": [39]}
+{"query": "green kurta", "type": "attribute", "relevant": [10, 18, 35, 50]}
+{"query": "sharara set", "type": "attribute", "relevant": [30, 36, 46]}
+{"query": "skirt set for women", "type": "attribute", "relevant": [23, 32]}
+{"query": "maroon kurta set under 4500", "type": "attribute", "relevant": [28]}
+{"query": "cheap kurta under 1500", "type": "attribute", "relevant": [5, 18, 34, 35, 43]}
+{"query": "yellow kurta", "type": "attribute", "relevant": [9, 12, 17, 43]}
+{"query": "kurta between 3000 and 4000", "type": "attribute", "relevant": [4, 6, 7, 13, 15, 20, 22, 25, 28, 29, 33]}
+{"query": "kurta over 5000", "type": "attribute", "relevant": [1, 2, 8, 10, 16, 27, 38, 44]}
+{"query": "salwar set", "type": "attribute", "relevant": [41, 49]}
+{"query": "anarkali kurta", "type": "feature", "relevant": [1, 4, 6, 7, 26, 27, 38, 41, 42]}
+{"query": "bandhani print", "type": "feature", "relevant": [19, 27, 45]}
+{"query": "gotta patti work", "type": "feature", "relevant": [7, 8, 10, 17, 27, 32, 45, 46]}
+{"query": "mirror work kurta", "type": "feature", "relevant": [15, 47]}
+{"query": "pure cotton kurta", "type": "feature", "relevant": [4, 7, 9, 10, 14, 23, 29, 38, 41, 48, 49, 50, 51]}
+{"query": "sleeveless kurta", "type": "feature", "relevant": [2, 19, 30, 36, 50]}
+{"query": "mandarin collar", "type": "feature", "relevant": [1, 6, 14, 16, 19, 24]}
+{"query": "keyhole neck kurta", "type": "feature", "relevant": [7, 13, 18, 35, 41, 46]}
+{"query": "thread work embroidered kurta", "type": "feature", "relevant": [3, 6, 16, 20, 30, 38]}
+{"query": "floral printed kurta with palazzos", "type": "feature", "relevant": [2, 7, 8, 14, 26]}
+{"query": "ethnic motifs", "type": "feature", "relevant": [1, 3, 10, 13, 15, 16, 22, 25, 34, 38, 40, 41, 42, 47]}
+{"query": "striped kurta", "type": "feature", "relevant": [50]}
+{"query": "geometric print", "type": "feature", "relevant": [21, 30, 43, 50]}
+{"query": "red anarkali under 6000", "type": "combined", "relevant": [4, 6, 27]}
+{"query": "pink floral kurta below 3000", "type": "combined", "relevant": [11]}
+{"query": "blue kurta with dupatta under 5000", "type": "combined", "relevant": [3, 7, 13, 22, 24, 26, 33]}
+{"query": "teal embroidered kurta", "type": "combined", "relevant": [44]}
+{"query": "black printed kurta below 2000", "type": "combined", "relevant": [5, 19]}
+{"query": "navy blue cotton kurta set", "type": "combined", "relevant": [7, 14]}
+{"query": "elegant heavily embellished outfit for a wedding", "type": "semantic", "relevant": [3, 7, 8, 10, 15, 16, 21, 25, 27, 30, 32, 38, 41, 44]}
+{"query": "light breathable outfit for summer", "type": "semantic", "relevant": [4, 5, 7, 9, 10, 11, 12, 14, 17, 18, 23, 29, 31, 35, 38, 41, 43, 45, 48, 49, 50, 51]}
+{"query": "festive party wear with dupatta", "type": "semantic", "relevant": [3, 7, 8, 10, 15, 16, 21, 25, 30, 32, 38, 41, 44, 46]}
+{"query": "affordable casual daily wear kurta", "type": "semantic", "relevant": [5, 9, 12, 18, 19, 34, 35, 39, 42, 43, 51]}
+{"query": "black leather jacket", "type": "negative", "relevant": []}
+{"query": "men's sneakers", "type": "negative", "relevant": []}
+{"query": "formal suit for men", "type": "negative", "relevant": []}
+{"query": "blue denim jeans", "type": "negative", "relevant": []}
+{"query": "gold necklace", "type": "negative", "relevant": []}
+{"query": "kurta under 500", "type": "negative", "relevant": []}
+{"query": "kurta for men", "type": "negative", "relevant": []}

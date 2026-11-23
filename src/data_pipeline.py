@@ -1,39 +1,65 @@
-import traceback
+"""Catalog -> embeddings -> vector store (batched, incremental)."""
+from pathlib import Path
+from typing import Dict, Optional
+
 import numpy as np
+
 from src.catalog import ProductCatalog
-from src.embedding_utils import embed_text, embed_image, embed_table
+from src.logging_utils import get_logger
 from src.vector_store import MultimodalVectorStore
 
+log = get_logger(__name__)
+
+
 class DataPipeline:
-    """Katalog → Embedding → Vector Store"""
-    def __init__(self, csv_path:str):
+    def __init__(
+        self,
+        csv_path: str,
+        embedder=None,
+        clip_embedder=None,
+        store: Optional[MultimodalVectorStore] = None,
+        table_embed_fn=None,
+    ):
+        """
+        ``store``: pass an existing store to index only *new* products (incremental).
+        ``clip_embedder``: optional; without it image vectors are left as zeros.
+        """
         self.catalog = ProductCatalog(csv_path)
-        self.vector_store = MultimodalVectorStore()
+        self.embedder = embedder
+        self.clip_embedder = clip_embedder
+        self.vector_store = store if store is not None else MultimodalVectorStore()
+        self.table_embed_fn = table_embed_fn
 
-    def prepare_product(self, product):
-        text = f"{product.name} {product.description} {product.color} {product.category} {product.gender}"
-        text_emb = embed_text(text)
-        image_emb = embed_image(str(product.image_path))
+    def _table_embeddings(self, products) -> Dict[str, np.ndarray]:
+        """Size charts are shared between products: embed each distinct file once."""
+        if self.table_embed_fn is None:
+            return {}
+        out: Dict[str, np.ndarray] = {}
+        for p in products:
+            if p.size_chart_path and str(p.size_chart_path) not in out and Path(p.size_chart_path).exists():
+                out[str(p.size_chart_path)] = self.table_embed_fn(str(p.size_chart_path))
+        return out
 
-        if product.size_chart_path and str(product.size_chart_path) != "None":
-            table_emb = embed_table(str(product.size_chart_path))
-        else:
-            table_emb = np.zeros(self.vector_store.table_dim, dtype='float32')
+    def build_index(self) -> MultimodalVectorStore:
+        new_products = [
+            p for p in self.catalog.products if not self.vector_store.has_product(p.product_id)
+        ]
+        log.info("%d products in catalog, %d new to index", len(self.catalog), len(new_products))
+        if not new_products:
+            return self.vector_store
 
-        return text, text_emb, image_emb, table_emb
+        text_embs = self.embedder.embed_documents([p.embedding_text() for p in new_products])
+        tables = self._table_embeddings(new_products)
 
-    def build_index(self):
-        print(f"{len(self.catalog)} ürün indexleniyor...")
+        for product, text_emb in zip(new_products, text_embs):
+            image_emb = None
+            if self.clip_embedder is not None and product.image_path and Path(product.image_path).exists():
+                try:
+                    image_emb = self.clip_embedder.embed_image(str(product.image_path))
+                except Exception as exc:  # noqa: BLE001 - one bad image must not stop the build
+                    log.warning("image embedding failed for %s: %s", product.product_id, exc)
+            table_emb = tables.get(str(product.size_chart_path)) if product.size_chart_path else None
+            self.vector_store.add_product(product, text_emb, image_emb, table_emb)
 
-        for i, product in enumerate(self.catalog.products):
-            print(f"[{i+1}/{len(self.catalog)}] {product.name}...")
-
-            try:
-                text, text_emb, image_emb, table_emb = self.prepare_product(product)
-                self.vector_store.add_product(product, text_emb, image_emb, table_emb)
-            except Exception as e:
-                print(f"Hata {product.name} : {e}")
-                traceback.print_exc()
-                continue
-        print(f"{len(self.vector_store)} urun indexlendi")
+        log.info("indexed %d products (total %d)", len(new_products), len(self.vector_store))
         return self.vector_store
