@@ -1,10 +1,10 @@
 python-dotenv
-faiss-cpu
-pillow
-pdf2image
 numpy
-streamlit
-torch
 pandas
+faiss-cpu
 google-genai
-transformers
+pydantic>=2
+fastapi
+uvicorn
+streamlit
+pillow

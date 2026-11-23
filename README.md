@@ -1,265 +1,122 @@
 # 🛍️ ProductInsight AI
 
-> AI-powered semantic product search for fashion & clothing e-commerce — built with Gemini, FAISS, CLIP, and Streamlit.
+Hybrid (lexical + semantic + visual) product search and grounded conversational assistant for an Indian ethnic-wear catalogue. Built with Gemini, FAISS, BM25, CLIP, FastAPI and Streamlit, and **evaluated with ranking metrics rather than eyeballed**.
 
----
+## What it does
 
-## Overview
-
-**ProductInsight AI** is a Retrieval-Augmented Generation (RAG) system designed for fashion e-commerce product discovery. It lets customers describe what they're looking for in natural language and returns semantically relevant clothing items, along with a conversational AI response — all powered by Google Gemini and a multimodal vector store.
-
----
-
-## Problem
-
-Traditional keyword-based product search fails when customers describe items conversationally:
-
-- *"Something elegant for a wedding, preferably blue"*
-- *"A comfortable summer outfit under ₹2000"*
-- *"A casual jacket that goes well with jeans"*
-
-Keyword search misses intent. Filters are rigid. Customers bounce.
-
----
-
-## Solution
-
-ProductInsight AI combines **semantic text embeddings**, **visual image embeddings**, and **structured size-chart embeddings** into a single multimodal FAISS vector store. When a customer queries the system:
-
-1. The query is embedded using Gemini's `gemini-embedding-001` model.
-2. The FAISS index retrieves the most semantically similar products.
-3. Retrieved products are passed to a Gemini LLM as context.
-4. The LLM generates a helpful, catalog-grounded response.
-
----
-
-## Usage Modes
-
-### Local Analysis (Streamlit UI)
-Run the interactive web interface to query the product catalog:
-```bash
-streamlit run app.py
-```
-
-### Index Building (CLI)
-Build or rebuild the FAISS vector index from the product CSV:
-```bash
-python build_index.py
-```
-
-### Testing
-Run end-to-end and retrieval tests from the `tests/` directory:
-```bash
-python tests/test_rag.py
-python tests/test_retrieval.py
-python tests/test_quality.py
-```
-
----
-
-## Key Features
-
-### Search Types
-
-#### 🔤 Semantic Text Search
-Embeds the customer's natural language query and retrieves products by meaning — not just keyword overlap. Handles color, category, gender, and price intent.
-
-#### 🖼️ Visual Similarity Search
-Each product image is embedded via CLIP (`openai/clip-vit-base-patch32`). The image index enables future visual query support (e.g., upload a photo to find similar items).
-
-#### 📐 Size Chart Embedding
-Product size charts (CSV files) are embedded as structured text. This enables size-aware retrieval for customers describing fit or dimensions.
-
-#### 💬 LLM-Grounded Response
-Gemini generates a natural-language response strictly grounded in retrieved products — no hallucinated items, no off-catalog recommendations.
-
-#### 🎯 Relevance Filtering
-Results are filtered by a configurable distance threshold (`RETRIEVAL_THRESHOLD`) before being passed to the LLM, ensuring only genuinely relevant products are surfaced.
-
----
-
-## Architecture Overview
-
-### Core Components
-
-| Component | File | Responsibility |
-|-----------|------|----------------|
-| `ProductRAG` | `src/rag_core.py` | Orchestrates retrieval + generation |
-| `MultimodalVectorStore` | `src/vector_store.py` | FAISS text / image / table indexes |
-| `DataPipeline` | `src/data_pipeline.py` | Embeds products and builds index |
-| `ProductCatalog` | `src/catalog.py` | Loads and parses the product CSV |
-| `Product` | `src/models.py` | Core data model |
-| `embed_*` | `src/embedding_utils.py` | Gemini text + CLIP image + table embedders |
-| `app.py` | — | Streamlit UI |
-| `build_index.py` | — | CLI entry point for index building |
-
-### Processing Stages
+A shopper types *"red anarkali under ₹6000"* or *"something elegant for a wedding"*:
 
 ```
-Product CSV
-    │
-    ▼
-ProductCatalog.load_from_csv()
-    │
-    ▼
-DataPipeline.prepare_product()
-    ├─ embed_text()     → Gemini text embedding (3072-dim)
-    ├─ embed_image()    → CLIP image embedding (512-dim)
-    └─ embed_table()    → Gemini table embedding (3072-dim)
-    │
-    ▼
-MultimodalVectorStore.add_product()
-    ├─ text_index  (FAISS IndexFlatL2)
-    ├─ image_index (FAISS IndexFlatL2)
-    └─ table_index (FAISS IndexFlatL2)
-    │
-    ▼
-Saved to embeddings/ directory
+query ──► parse (LLM structured output, rule-based fallback)
+          {color, category, gender, price range, semantic query}
+      ──► hard metadata filter  (applied BEFORE ranking, not left to the LLM)
+      ──► BM25 ─┐
+      ──► dense (Gemini embeddings, cosine/FAISS) ─┼─► Reciprocal Rank Fusion ─► top-k
+      ──► CLIP text→image (optional) ──────────────┘
+      ──► Gemini answers with JSON {message, recommended_ids}
+      ──► grounding check: ids not in the retrieved context are dropped
 ```
 
-### Parsing / Validation Layer
+Highlights
 
-The `Product` dataclass (`src/models.py`) validates all incoming product records:
-- Price must be a positive value
-- Image and size chart paths are verified; missing files emit warnings without crashing the pipeline
+- **Structured query understanding**: colour / category / gender / price extracted as filters (`src/query_parser.py`); Gemini JSON-schema parser with a deterministic rule-based fallback, so search still works offline.
+- **Hybrid retrieval**: dependency-free BM25 + dense vectors, fused with RRF (`src/retriever.py`, `src/lexical.py`).
+- **Cosine similarity done properly**: L2-normalised vectors, `IndexFlatIP`; optional `IndexHNSWFlat`; Gemini `RETRIEVAL_QUERY` / `RETRIEVAL_DOCUMENT` task types.
+- **Grounded generation**: structured output, recommended ids validated against the retrieved context, deterministic "no results" explanation (names the filters that excluded everything), prompt-injection-aware prompt, graceful fallback when the LLM fails.
+- **Conversation**: multi-turn chat with LLM query rewriting ("cheaper ones", "in blue").
+- **Operations**: batched + disk-cached embeddings with retry/backoff, incremental indexing, per-stage latency timings, FastAPI service, Docker, CI.
+- **Offline mode**: without an API key the app runs BM25 + rule-based filters (used by CI and for demos).
 
-### External Service Integration
+## Evaluation
 
-| Service | Purpose |
-|---------|---------|
-| Google Gemini (`gemini-embedding-001`) | Text and table embedding |
-| Google Gemini (`gemini-2.5-flash`) | LLM response generation |
-| HuggingFace CLIP (`openai/clip-vit-base-patch32`) | Image embedding |
+44 labelled queries (`eval/queries.jsonl`, generated by `python -m eval.make_queries`) across five types: *attribute*, *feature*, *combined*, *semantic* (weak labels) and *negative* (not in catalogue, a good system returns nothing).
 
----
+Measured results (`python -m eval.run_eval`, real Gemini embeddings, `MIN_SIMILARITY=0.65`):
 
-## Tech Stack
+| config | P@5 | R@10 | MRR | nDCG@10 | neg-reject |
+|---|---|---|---|---|---|
+| bm25 | 0.605 | 0.817 | 0.824 | 0.776 | 0.143 |
+| bm25 + filter | 0.870 | 0.854 | 0.922 | 0.878 | 1.000 |
+| dense | 0.573 | 0.776 | 0.830 | 0.773 | 0.571 |
+| dense + filter | 0.777 | 0.826 | 0.932 | 0.859 | 1.000 |
+| hybrid (RRF) | 0.568 | 0.835 | 0.883 | 0.831 | 0.143 |
+| **hybrid + filter** | 0.788 | **0.881** | **0.959** | **0.914** | 1.000 |
 
-| Layer | Technology |
-|-------|-----------|
-| **Backend / UI** | [Streamlit](https://streamlit.io/) |
-| **AI / Embedding** | [Google Gemini API](https://ai.google.dev/) (`gemini-embedding-001`) |
-| **LLM** | Google Gemini (`gemini-2.5-flash`) |
-| **Image Embedding** | [CLIP](https://huggingface.co/openai/clip-vit-base-patch32) via HuggingFace Transformers |
-| **Vector Search** | [FAISS](https://github.com/facebookresearch/faiss) (CPU) |
-| **Data Processing** | Pandas, NumPy |
-| **Image Processing** | Pillow, PyTorch |
-| **Language / Runtime** | Python 3.10+ |
+Per query type, nDCG@10 / MRR:
 
----
+| config | attribute | feature | combined | semantic |
+|---|---|---|---|---|
+| bm25 | 0.721 / 0.764 | 0.985 / 1.0 | 0.883 / 0.917 | 0.127 / 0.323 |
+| bm25 + filter | 1.0 / 1.0 | 0.933 / 1.0 | 1.0 / 1.0 | 0.089 / 0.281 |
+| dense | 0.789 / 0.764 | 0.769 / 0.923 | 0.890 / 0.833 | 0.560 / 0.750 |
+| dense + filter | 1.0 / 1.0 | 0.763 / 0.923 | 0.938 / 0.917 | 0.560 / 0.750 |
+| hybrid | 0.789 / 0.798 | 0.949 / 1.0 | 0.926 / 0.917 | 0.456 / 0.750 |
+| hybrid + filter | 1.0 / 1.0 | 0.922 / 1.0 | 1.0 / 1.0 | 0.458 / 0.625 |
 
-## Getting Started
+Reading the table honestly:
 
-### Prerequisites
-- Python 3.10+
-- A [Google Gemini API key](https://aistudio.google.com/app/apikey)
+- Hybrid + filter is best overall (nDCG@10 0.776 BM25 baseline → 0.914, MRR 0.824 → 0.959) and rejects every out-of-catalogue query.
+- BM25 is strong on keyword-style queries (*feature* 0.985) but collapses on intent queries (*semantic* 0.127); dense recovers them (0.560) but is weaker on exact keywords (*feature* 0.769). Fusing them keeps most of both.
+- **Attribute/combined scores of 1.0 are partly circular**: their ground truth is defined by the same catalogue columns the filter uses. The informative rows are *feature* and *semantic*.
+- **`MIN_SIMILARITY` was chosen on this same query set** (`eval/results/threshold_sweep.md`: 0.65 is the point where negative-query rejection reaches 100% with the smallest nDCG loss), so the headline numbers are slightly optimistic. With 44 queries and 51 products, treat differences of a few points as noise.
+- LLM-as-judge on generated answers (`--judge`, `gemini-3.5-flash-lite` for both generation and judging, 44 queries): helpfulness 5.00/5, judge-accurate 100%, id-grounded 100%. **Treat this as a weak signal**: the judge is a small model from the same family as the generator, scores were saturated, and 16% of answers came from the retrieval-only fallback because the larger Gemini models returned 503 (high demand) during the run. A stricter judge and a rubric with failure cases would be the next step.
 
-### Option 1: Local Development
+Reproduce: `python build_index.py && python -m eval.run_eval` (also `--sweep-threshold`, `--judge`).
 
-**1. Clone the repository**
-```bash
-git clone https://github.com/your-username/productinsight-ai.git
-cd productinsight-ai
-```
+Synthetic FAISS scaling benchmark (50k clustered random vectors, d=768, `eval/results/index_benchmark.md`): exact flat search 4.2 ms/query; HNSW reaches recall 0.955 at 1.9 ms/query (efSearch=512). This shows scaling behaviour only, not product-retrieval quality; the real catalogue (51 items) is too small for ANN to matter.
 
-**2. Create and activate a virtual environment**
-```bash
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS / Linux
-source .venv/bin/activate
-```
-
-**3. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**4. Configure environment variables**
-```bash
-cp .env.example .env
-# Edit .env and add your GEMINI_API_KEY
-```
-
-**5. Build the FAISS index**
-```bash
-python build_index.py
-```
-
-**6. Launch the app**
-```bash
-streamlit run app.py
-```
-
----
-
-## Environment Variables
-
-Copy `.env.example` to `.env` and fill in the values:
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `GEMINI_API_KEY` | Google Gemini API key | — |
-| `EMBEDDING_MODEL_NAME` | Gemini embedding model | `gemini-embedding-001` |
-| `LLM_MODEL` | Gemini chat model | `gemini-2.5-flash` |
-| `CLIP_MODEL_NAME` | HuggingFace CLIP model | `openai/clip-vit-base-patch32` |
-| `TEXT_EMBEDDING_DIM` | Text embedding dimension | `3072` |
-| `IMAGE_EMBEDDING_DIM` | Image embedding dimension | `512` |
-| `TABLE_EMBEDDING_DIM` | Table embedding dimension | `3072` |
-| `FAISS_TEXT_PATH` | Path to text FAISS index | `embeddings/text_index.faiss` |
-| `FAISS_IMAGE_PATH` | Path to image FAISS index | `embeddings/image_index.faiss` |
-| `FAISS_TABLE_PATH` | Path to table FAISS index | `embeddings/table_index.faiss` |
-| `METADATA_PATH` | Path to product metadata JSON | `embeddings/metadata.json` |
-| `PRODUCT_CSV_PATH` | Path to product catalog CSV | `src/data/product.csv` |
-| `RETRIEVAL_THRESHOLD` | Max L2 distance for relevance filtering | `0.75` |
-| `RETRIEVAL_K` | Number of products to retrieve | `5` |
-| `LLM_TEMPERATURE` | LLM response temperature | `0.3` |
-
----
-
-## Data Format
-
-### `src/data/product.csv`
-
-| Column | Type | Description |
-|--------|------|-------------|
-| `product_id` | int | Unique product identifier |
-| `name` | str | Product name |
-| `description` | str | Product description |
-| `price` | float | Price in ₹ |
-| `color` | str | Primary color |
-| `category` | str | e.g., T-Shirt, Jacket, Dress, Jeans |
-| `gender` | str | Women / Men / Unisex |
-| `image_path` | str | Relative path to product image |
-| `size_chart_path` | str | Relative path to size chart CSV (optional) |
-
----
-
-## Testing
+## Quick start
 
 ```bash
-# End-to-end RAG system test
-python tests/test_rag.py
+pip install -r requirements.txt              # add requirements-clip.txt for image features
+cp .env.example .env                         # set GEMINI_API_KEY
 
-# Retrieval and ranking test
-python tests/test_retrieval.py
-
-# Response quality evaluation
-python tests/test_quality.py
+python build_index.py                        # incremental; --rebuild to start over
+streamlit run app.py                         # chat UI
+uvicorn api:app --reload                     # REST API  (docs at /docs)
 ```
 
----
+Without a key or index everything still runs in offline BM25 mode.
 
-## Contributing
+### API
 
-Contributions are welcome! Please open an issue first to discuss what you'd like to change.
+| endpoint | purpose |
+|---|---|
+| `GET /health` | status, catalogue size, whether dense/LLM are enabled |
+| `POST /search` | `{query, k, mode: bm25\|dense\|hybrid, use_filter}` → ranked products, parsed filters, timings |
+| `POST /chat` | `{query, history[], k}` → grounded answer, products, `grounded` flag, timings |
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Commit your changes (`git commit -m 'Add my feature'`)
-4. Push to the branch (`git push origin feature/my-feature`)
-5. Open a Pull Request
+### Tests and tooling
 
+```bash
+pip install -r requirements-dev.txt
+ruff check .
+pytest                       # 45 unit tests, no network (fake embedder / fake LLM)
+pytest -m integration        # live Gemini tests, skipped without key + index
+docker compose up --build    # API on :8000, UI on :8501 (mounts ./embeddings)
+```
 
-<p align="center">Built with ❤️ using Gemini · FAISS · CLIP · Streamlit</p>
+CI (`.github/workflows/ci.yml`) runs ruff, pytest and the offline evaluation.
+
+## Project layout
+
+| path | role |
+|---|---|
+| `src/retriever.py` | filter → BM25 / dense / CLIP → RRF fusion, per-stage timings |
+| `src/query_parser.py` | rule-based + Gemini structured-output query parsing, colour families |
+| `src/lexical.py` | BM25 with light stemming |
+| `src/vector_store.py` | FAISS text / image / size-chart indexes (cosine, flat or HNSW), versioned persistence |
+| `src/embedding_utils.py` | Gemini + CLIP embedders, normalisation, retry, disk cache |
+| `src/rag_core.py` | rewrite → retrieve → structured answer → grounding check |
+| `src/factory.py` | wiring with graceful degradation to offline mode |
+| `api.py`, `app.py` | FastAPI service, Streamlit chat UI |
+| `eval/` | queries, metrics, harness, threshold sweep, LLM judge, FAISS benchmark |
+
+## Known limitations
+
+- Catalogue is tiny (51 products) and women's ethnic wear only; labels for *semantic* queries are heuristic.
+- The repository ships no product images (`src/data/images/` is empty), and several products share a size chart. CLIP image/text-to-image and image upload search are implemented but **not exercised by the automated tests** (they need torch + real images). The size-chart index is not used for ranking; charts are shown in the UI instead.
+- Image vectors are zeros in the current index (built with `--no-clip`, no product images), so image/CLIP retrieval is untested.
+- Generation, query-rewriting and the LLM query parser have only been exercised with fakes in unit tests; live runs hit 503s from Gemini (the code falls back to rule-based parsing / retrieval-only answers).
+- Streamlit calls the retrieval layer directly rather than the REST API; the Docker setup is untested here.
+- Indexes built by the previous version (L2, unnormalised) are rejected with a clear message; rebuild with `python build_index.py`.

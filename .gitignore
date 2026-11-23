@@ -46,3 +46,8 @@ embeddings/metadata.json
 # OS specific
 .DS_Store
 Thumbs.db
+# Caches / eval outputs
+.cache/
+.pytest_cache/
+.ruff_cache/
+eval/results/ci.*

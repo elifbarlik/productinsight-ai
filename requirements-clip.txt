@@ -1,0 +1,3 @@
+# Optional: image embeddings / text-to-image / image-to-image search (large download)
+torch
+transformers

@@ -1,132 +1,176 @@
+"""FAISS-backed multimodal vector store (text / image / size-chart indexes).
+
+All indexes use inner product over L2-normalised vectors, i.e. cosine similarity
+(higher is better). Row ``i`` of every index belongs to ``metadata[i]``.
+"""
+import json
+import os
+from typing import Dict, Iterable, List, Optional, Tuple
+
 import faiss
 import numpy as np
-import json
-from typing import List, Tuple, Optional
-from pathlib import Path
+
+from src.config import (
+    faiss_index_type,
+    image_embedding_dim,
+    table_embedding_dim,
+    text_embedding_dim,
+)
+from src.embedding_utils import normalize
 from src.models import Product
-from src.config import text_embedding_dim, image_embedding_dim, table_embedding_dim
-import os
+
+FORMAT_VERSION = 2
+
+
+class IndexFormatError(RuntimeError):
+    """Raised when an index on disk was built by an incompatible version."""
+
 
 class MultimodalVectorStore:
-    def __init__(self, text_dim:int=None, image_dim:int=None, table_dim:int=None):
-        self.text_dim = text_dim if text_dim is not None else text_embedding_dim
-        self.image_dim = image_dim if image_dim is not None else image_embedding_dim
-        self.table_dim = table_dim if table_dim is not None else table_embedding_dim
-
-        self.text_index = faiss.IndexFlatL2(self.text_dim)
-        self.image_index = faiss.IndexFlatL2(self.image_dim)
-        self.table_index = faiss.IndexFlatL2(self.table_dim)
-
-        self.metadata:List[Product] = []
-        self.id_map={}
-
-    def add_product(self, product:Product, text_embedding:np.ndarray, image_embedding:np.ndarray, table_embedding:np.ndarray):
-        idx = len(self.metadata)
-
-        self.text_index.add(text_embedding.reshape(1, -1).astype('float32'))
-        self.image_index.add(image_embedding.reshape(1, -1).astype('float32'))
-        self.table_index.add(table_embedding.reshape(1, -1).astype('float32'))
-
-        self.metadata.append(product)
-        self.id_map[product.product_id] = idx
-
-    def search_text(self, query_embedding: np.ndarray, k: int = 5, threshold: float = None) -> List[Tuple[int, float]]:
-        distances, indices = self.text_index.search(query_embedding.reshape(1, -1).astype('float32'), k)
-
-        results = list(zip(indices[0].tolist(), distances[0].tolist()))
-
-
-        if threshold is not None:
-            results = [(idx, dist) for idx, dist in results if dist < threshold]
-
-        return results
-
-
-    def search_image(self, query_embedding: np.ndarray, k: int = 5, threshold: float = None) -> List[Tuple[int, float]]:
-        distances, indices = self.image_index.search(query_embedding.reshape(1, -1).astype('float32'), k)
-
-        results = list(zip(indices[0].tolist(), distances[0].tolist()))
-
-
-        if threshold is not None:
-            results = [(idx, dist) for idx, dist in results if dist < threshold]
-
-        return results
-
-
-    def search_combined(
+    def __init__(
         self,
+        text_dim: Optional[int] = None,
+        image_dim: Optional[int] = None,
+        table_dim: Optional[int] = None,
+        index_type: Optional[str] = None,
+    ):
+        self.text_dim = text_dim or text_embedding_dim
+        self.image_dim = image_dim or image_embedding_dim
+        self.table_dim = table_dim or table_embedding_dim
+        self.index_type = index_type or faiss_index_type
+
+        self.text_index = self._make_index(self.text_dim)
+        self.image_index = self._make_index(self.image_dim)
+        self.table_index = self._make_index(self.table_dim)
+
+        self.metadata: List[Product] = []
+        self.id_map: Dict[int, int] = {}
+
+    # ── construction ──────────────────────────────────────
+    def _make_index(self, dim: int):
+        if self.index_type == "hnsw":
+            return faiss.IndexHNSWFlat(dim, 32, faiss.METRIC_INNER_PRODUCT)
+        if self.index_type == "flat":
+            return faiss.IndexFlatIP(dim)
+        raise ValueError(f"Unknown index type: {self.index_type!r} (use 'flat' or 'hnsw')")
+
+    def _vec(self, emb: Optional[np.ndarray], dim: int) -> np.ndarray:
+        if emb is None:
+            return np.zeros((1, dim), dtype="float32")
+        arr = normalize(np.asarray(emb, dtype="float32").reshape(1, -1))
+        if arr.shape[1] != dim:
+            raise ValueError(f"Embedding has dim {arr.shape[1]}, index expects {dim}")
+        return arr
+
+    def has_product(self, product_id: int) -> bool:
+        return product_id in self.id_map
+
+    def add_product(
+        self,
+        product: Product,
         text_embedding: np.ndarray,
         image_embedding: Optional[np.ndarray] = None,
-        k: int = 5,
-        threshold: float = None,
-        text_weight: float = 0.7,
-        image_weight: float = 0.3
-    ) -> List[Tuple[Product, float]]:
-        text_results = self.search_text(text_embedding, k=k * 2)
+        table_embedding: Optional[np.ndarray] = None,
+    ) -> bool:
+        """Add a product. Returns False (and does nothing) if the id is already indexed."""
+        if self.has_product(product.product_id):
+            return False
+        text_vec = self._vec(text_embedding, self.text_dim)
+        image_vec = self._vec(image_embedding, self.image_dim)
+        table_vec = self._vec(table_embedding, self.table_dim)
 
-        scores = {}
-        for idx, dist in text_results:
-            similarity = 1.0 / (1.0 + dist)
-            scores[idx] = scores.get(idx, 0) + similarity * text_weight
+        self.text_index.add(text_vec)
+        self.image_index.add(image_vec)
+        self.table_index.add(table_vec)
 
-        if image_embedding is not None:
-            image_results = self.search_image(image_embedding, k=k * 2)
-            for idx, dist in image_results:
-                similarity = 1.0 / (1.0 + dist)
-                scores[idx] = scores.get(idx, 0) + similarity * image_weight
+        self.id_map[product.product_id] = len(self.metadata)
+        self.metadata.append(product)
+        return True
 
-        if threshold is not None:
-            scores = {idx: score for idx, score in scores.items() if score >= threshold}
+    # ── search ────────────────────────────────────────────
+    @staticmethod
+    def _search(
+        index,
+        query: np.ndarray,
+        k: int,
+        allowed: Optional[Iterable[int]] = None,
+        min_score: Optional[float] = None,
+    ) -> List[Tuple[int, float]]:
+        n = index.ntotal
+        if n == 0 or k <= 0:
+            return []
+        q = normalize(np.asarray(query, dtype="float32").reshape(1, -1))
+        k = min(k, n)
 
-        sorted_indices = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:k]
+        if allowed is None:
+            scores, ids = index.search(q, k)
+        else:
+            allowed_ids = np.array(sorted(set(allowed)), dtype="int64")
+            if allowed_ids.size == 0:
+                return []
+            sel = faiss.IDSelectorBatch(allowed_ids)
+            params = (
+                faiss.SearchParametersHNSW()
+                if isinstance(index, faiss.IndexHNSW)
+                else faiss.SearchParameters()
+            )
+            params.sel = sel
+            scores, ids = index.search(q, k, params=params)
 
-        return [(self.metadata[idx], score) for idx, score in sorted_indices if idx < len(self.metadata)]
+        results = [
+            (int(i), float(s)) for i, s in zip(ids[0], scores[0]) if i >= 0
+        ]
+        if min_score is not None:
+            results = [(i, s) for i, s in results if s >= min_score]
+        return results
 
-    def save(self, text_path:str, image_path:str,table_path:str, metadata_path:str ):
-        os.makedirs(os.path.dirname(text_path), exist_ok=True)
+    def search_text(self, query_embedding, k=5, allowed=None, min_score=None):
+        return self._search(self.text_index, query_embedding, k, allowed, min_score)
+
+    def search_image(self, query_embedding, k=5, allowed=None, min_score=None):
+        return self._search(self.image_index, query_embedding, k, allowed, min_score)
+
+    def search_table(self, query_embedding, k=5, allowed=None, min_score=None):
+        return self._search(self.table_index, query_embedding, k, allowed, min_score)
+
+    # ── persistence ───────────────────────────────────────
+    def save(self, text_path: str, image_path: str, table_path: str, metadata_path: str):
+        for path in (text_path, image_path, table_path, metadata_path):
+            os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
         faiss.write_index(self.text_index, text_path)
         faiss.write_index(self.image_index, image_path)
         faiss.write_index(self.table_index, table_path)
 
-        metadata_list = [p.to_dict() for p in self.metadata]
-        with open(metadata_path, 'w') as f:
-            json.dump(metadata_list, f, indent=2)
+        payload = {
+            "version": FORMAT_VERSION,
+            "metric": "inner_product",
+            "products": [p.to_dict() for p in self.metadata],
+        }
+        with open(metadata_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
 
     @classmethod
-    def load(cls, text_path:str, image_path:str, table_path:str, metadata_path:str):
-        store = cls.__new__(cls)
-        store.metadata = []
-        store.id_map = {}
+    def load(cls, text_path: str, image_path: str, table_path: str, metadata_path: str):
+        with open(metadata_path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+        if not isinstance(payload, dict) or payload.get("version") != FORMAT_VERSION:
+            raise IndexFormatError(
+                "Index was built with an older version (L2 / unnormalised vectors). "
+                "Rebuild it with: python build_index.py"
+            )
 
+        store = cls.__new__(cls)
         store.text_index = faiss.read_index(text_path)
         store.image_index = faiss.read_index(image_path)
         store.table_index = faiss.read_index(table_path)
+        store.text_dim = store.text_index.d
+        store.image_dim = store.image_index.d
+        store.table_dim = store.table_index.d
+        store.index_type = "hnsw" if isinstance(store.text_index, faiss.IndexHNSW) else "flat"
 
-        with open(metadata_path, 'r') as f:
-            metadata_list = json.load(f)
-        for i, metadata in enumerate(metadata_list):
-            product = Product(
-                product_id=metadata['product_id'],
-                name=metadata['name'],
-                description=metadata['description'],
-                price=metadata['price'],
-                color=metadata['color'],
-                category=metadata.get('category', ''),
-                gender=metadata.get('gender', ''),
-                image_path=Path(metadata["image_path"]) if metadata.get("image_path") else None,
-                size_chart_path=Path(metadata["size_chart_path"]) if metadata.get("size_chart_path") else None,
-            )
-            store.metadata.append(product)
-            store.id_map[product.product_id] = i
-
+        store.metadata = [Product.from_dict(d) for d in payload["products"]]
+        store.id_map = {p.product_id: i for i, p in enumerate(store.metadata)}
         return store
 
     def __len__(self):
         return len(self.metadata)
-
-
-if __name__=="__main__":
-    from src.models import Product
-    store = MultimodalVectorStore()
-    print(f"Vector store created: {store.__dict__}")
